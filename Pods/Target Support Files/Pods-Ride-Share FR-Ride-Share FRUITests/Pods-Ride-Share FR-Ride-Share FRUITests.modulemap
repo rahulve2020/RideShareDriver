@@ -1,0 +1,6 @@
+framework module Pods_Ride_Share_FR_Ride_Share_FRUITests {
+  umbrella header "Pods-Ride-Share FR-Ride-Share FRUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
