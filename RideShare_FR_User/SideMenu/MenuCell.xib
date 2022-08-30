@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="85" id="14G-9S-nWp" customClass="MenuCell" customModule="Banquet_Gem" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="294" height="85"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="14G-9S-nWp" id="L4I-Xa-r5E">
+                <rect key="frame" x="0.0" y="0.0" width="294" height="85"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPO-IZ-exY">
+                        <rect key="frame" x="0.0" y="10" width="294" height="40"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dN8-Ub-xE6">
+                                <rect key="frame" x="60" y="10" width="214" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="HuG-mv-gH5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_logo_icon" translatesAutoresizingMaskIntoConstraints="NO" id="cJ8-QE-cbd">
+                                <rect key="frame" x="20" y="10" width="20" height="20"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="4hu-oc-gDc"/>
+                                    <constraint firstAttribute="height" constant="20" id="mnA-SB-c81"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dN8-Ub-xE6" secondAttribute="trailing" constant="20" id="26p-K9-Stp"/>
+                            <constraint firstItem="dN8-Ub-xE6" firstAttribute="leading" secondItem="cJ8-QE-cbd" secondAttribute="trailing" constant="20" id="BaR-VG-MEA"/>
+                            <constraint firstItem="dN8-Ub-xE6" firstAttribute="centerY" secondItem="aPO-IZ-exY" secondAttribute="centerY" id="Vxk-xS-TDT"/>
+                            <constraint firstItem="cJ8-QE-cbd" firstAttribute="leading" secondItem="aPO-IZ-exY" secondAttribute="leading" constant="20" id="Z1m-Ir-2Mv"/>
+                            <constraint firstItem="cJ8-QE-cbd" firstAttribute="centerY" secondItem="aPO-IZ-exY" secondAttribute="centerY" id="gam-6i-sIs"/>
+                            <constraint firstAttribute="height" constant="40" id="iQz-na-CXF"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="aPO-IZ-exY" firstAttribute="leading" secondItem="L4I-Xa-r5E" secondAttribute="leading" id="PCX-na-6Dn"/>
+                    <constraint firstAttribute="trailing" secondItem="aPO-IZ-exY" secondAttribute="trailing" id="k5u-L0-jxg"/>
+                    <constraint firstItem="aPO-IZ-exY" firstAttribute="top" secondItem="L4I-Xa-r5E" secondAttribute="top" constant="10" id="vWQ-sc-a4a"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="_view" destination="aPO-IZ-exY" id="fFk-JV-Fiy"/>
+                <outlet property="imgView" destination="cJ8-QE-cbd" id="5wI-0D-OJu"/>
+                <outlet property="nameLbl" destination="dN8-Ub-xE6" id="jbl-jz-4Kq"/>
+            </connections>
+            <point key="canvasLocation" x="115.94202898550725" y="125.55803571428571"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="app_logo_icon" width="100" height="100"/>
+    </resources>
+</document>
