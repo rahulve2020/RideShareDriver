@@ -41,9 +41,9 @@ class TotalFareDetailsVC: UIViewController {
   
     func getDropUpAddressFromLatLon() {                                  // abhishek
             var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
-            let lat: Double = objResponse?.dropLocation?.drop_latitude ?? 0.0
+        let lat: Double = self.dropLat ?? 0.0    //objResponse?.dropLocation?.drop_latitude ?? 0.0
             //21.228124
-            let lon: Double = objResponse?.dropLocation?.drop_longitude ?? 0.0
+        let lon: Double = self.dropLong ?? 0.0    //objResponse?.dropLocation?.drop_longitude ?? 0.0
             //72.833770
         
             let ceo: CLGeocoder = CLGeocoder()
@@ -109,6 +109,7 @@ class TotalFareDetailsVC: UIViewController {
             let modelObj = TotalFareDetails.init(data: dataArray!)
           
             self.totalFareDetails = modelObj
+            self.getDropUpAddressFromLatLon()
 
             self.loadData()
 
@@ -120,7 +121,10 @@ class TotalFareDetailsVC: UIViewController {
     func loadData()  {
         self.amountLbl.text = self.totalFareDetails?.total_Charge
         self.distanceLbl.text = self.totalFareDetails?.total_distance
-        self.timeLbl.text = "\(self.totalFareDetails?.total_time)"
+      //  self.timeLbl.text = "\(self.totalFareDetails?.total_time)"
+        if let totalTime = self.totalFareDetails?.total_time {
+            self.timeLbl.text = "\(totalTime)"
+        }
         
     }
     

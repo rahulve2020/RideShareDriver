@@ -51,9 +51,10 @@ class Apphelper: NSObject {
             static let getSubCategory : String = API.BaseUrl + "user/get-vegical-subcategory-list"
             static let getContactDetails : String = API.BaseUrl + "driver/submit-contact-us"
             static let getOrderComplete : String = API.BaseUrl + "driver/mark-order-complete"
+            static let earnByDriver : String = API.BaseUrl + "driver/total-earn-by-driver"
             static let helpAndSupport : String = API.BaseUrl + "helpAndSupport"
             static let sharePost : String = API.BaseUrl + "sharePost"                  // abhishek
-            static let getPolicy : String = API.BaseUrl + "getPolicy"
+            
            
            
             static let updateBanquet : String = API.BaseUrl + "updateBanquet"

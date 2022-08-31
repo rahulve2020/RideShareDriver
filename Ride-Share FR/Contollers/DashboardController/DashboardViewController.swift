@@ -130,7 +130,8 @@ class DashboardViewController: SidePanelBaseViewController, PopupDelegate {
     @IBAction func navigationBtn(_ sender: Any) {
         let saddr = "\(locationStart.coordinate.latitude),\(locationStart.coordinate.longitude)"
          DSUserPrefrence.endTrip = true
-       //   self.objResponse?.orderId
+        startOrder()
+      
         if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
             UIApplication.shared.openURL(URL(string:"comgooglemaps://?saddr=\(saddr)&daddr=\(self.latDrop ?? 0.0),\(self.longDrop ?? 0.0)&directionsmode=driving&zoom=14&views=traffic")!)
         } else {
@@ -139,13 +140,13 @@ class DashboardViewController: SidePanelBaseViewController, PopupDelegate {
         
     }
     @IBAction func trackBtn(_ sender: Any) {
-      //  startOrder()
+        startOrder()
         
         let origin = "\(locationStart.coordinate.latitude),\(locationStart.coordinate.longitude)"
 
         let destination = "\(self.latDrop ?? 0.0),\(self.longDrop ?? 0.0)"
        
-            let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=AIzaSyDOAIDFY9jhsFrZXDynm7-C4D6T_lxe52Y"
+        let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=AIzaSyDOAIDFY9jhsFrZXDynm7-C4D6T_lxe52Y"
 
 
         AF.request(url).responseJSON { response in
@@ -173,7 +174,7 @@ class DashboardViewController: SidePanelBaseViewController, PopupDelegate {
             }
                 self.configureMapStyle()
                 self.vwMap.drawPath(GMSMapView.pathString)
-                self.addButtons()
+              //  self.addButtons()
                 LocationTracker.shared.locateMeOnLocationChange { [weak self]  _  in
                 self?.moveCarMarker()
                         }
@@ -183,28 +184,18 @@ class DashboardViewController: SidePanelBaseViewController, PopupDelegate {
         }
         
     }
-//
-//        func startOrder(){
-//            var dicParam : Dictionary<String,Any> = Dictionary()
-//
-//
-//            dicParam["orderId"] = self.orderId
-//            AppServices.shared.startRideUpdate(param: dicParam, success: { [self] (data) in
-//                print("datadatadata:-",data)
-//
-//                let saddr = "\(locationStart.coordinate.latitude),\(locationStart.coordinate.longitude)"
-//                let infoLocation = "\(objResponse?.dropLocation?.drop_latitude),\(objResponse?.dropLocation?.drop_longitude)"
-//
-//                if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
-//                UIApplication.shared.openURL(URL(string:"comgooglemaps://?saddr=\(saddr)&daddr=\(infoLocation)&directionsmode=driving&zoom=14&views=traffic")!)
-//
-//                } else {
-//                 print("Can't use comgooglemaps://");
-//                 }
-//
-//            }, failure: {errorMsg in })
-//        }
-//
+
+        func startOrder(){
+            var dicParam : Dictionary<String,Any> = Dictionary()
+
+            dicParam["orderId"] = self.orderId
+            AppServices.shared.startRideUpdate(param: dicParam, success: { [self] (data) in
+                print("datadatadata:-",data)
+
+
+            }, failure: {errorMsg in })
+        }
+
     func rqstAcceptButtonAction(infoLocation: PickLocation, latDrop: Double, longDrop: Double)  {
      //   self.latDrop = latDrop
      //   self.longDrop = longDrop

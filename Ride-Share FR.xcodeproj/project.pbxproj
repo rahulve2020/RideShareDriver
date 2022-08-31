@@ -98,6 +98,7 @@
 		7DDC9E8228BCD8330001A08C /* TotalFareDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDC9E8128BCD8330001A08C /* TotalFareDetails.swift */; };
 		7DDF276328869B0E0055E29D /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDF276228869B0D0055E29D /* LoginModel.swift */; };
 		7DDF27652886AE130055E29D /* VehicleCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDF27642886AE130055E29D /* VehicleCategoryModel.swift */; };
+		7DE2830B28BF5E6E00B8B55A /* TotalEarnDriverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE2830A28BF5E6E00B8B55A /* TotalEarnDriverModel.swift */; };
 		7DF55E70286B2DDD009A45EB /* ManageVehicleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF55E6F286B2DDD009A45EB /* ManageVehicleVC.swift */; };
 		7DF55E74286B43A7009A45EB /* UpdateVehicleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF55E73286B43A7009A45EB /* UpdateVehicleVC.swift */; };
 		7DFA17BE286C7D5400A86483 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFA17BD286C7D5400A86483 /* NotificationVC.swift */; };
@@ -221,6 +222,7 @@
 		7DDC9E8128BCD8330001A08C /* TotalFareDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalFareDetails.swift; sourceTree = "<group>"; };
 		7DDF276228869B0D0055E29D /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		7DDF27642886AE130055E29D /* VehicleCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCategoryModel.swift; sourceTree = "<group>"; };
+		7DE2830A28BF5E6E00B8B55A /* TotalEarnDriverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalEarnDriverModel.swift; sourceTree = "<group>"; };
 		7DF55E6F286B2DDD009A45EB /* ManageVehicleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageVehicleVC.swift; sourceTree = "<group>"; };
 		7DF55E73286B43A7009A45EB /* UpdateVehicleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateVehicleVC.swift; sourceTree = "<group>"; };
 		7DFA17BD286C7D5400A86483 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 				7DBC07002892B88C00E692F4 /* NotificationModel.swift */,
 				7DC8A3C228B8C88000DCBEA3 /* StartRideModel.swift */,
 				7DDC9E8128BCD8330001A08C /* TotalFareDetails.swift */,
+				7DE2830A28BF5E6E00B8B55A /* TotalEarnDriverModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -932,6 +935,7 @@
 				7D1C77DD286D828700CD2C45 /* SwiftLoader.swift in Sources */,
 				7DA01CBD2872FED80097A1EC /* WalletAccountDetailsVC.swift in Sources */,
 				7DBC06FB28929E2E00E692F4 /* UserDetailsVC.swift in Sources */,
+				7DE2830B28BF5E6E00B8B55A /* TotalEarnDriverModel.swift in Sources */,
 				7DB5CF6528644F6200E83DE7 /* ForgetPasswordVC.swift in Sources */,
 				7DF55E74286B43A7009A45EB /* UpdateVehicleVC.swift in Sources */,
 				7D1C77F0286DB52C00CD2C45 /* AboutUsVC.swift in Sources */,

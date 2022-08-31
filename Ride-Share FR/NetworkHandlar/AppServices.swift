@@ -792,11 +792,13 @@ func resetPassword(param : Dictionary<String,Any>, success : @escaping successBl
         
     }
 
-    func getPolicyData(param : Dictionary<String,Any>, success : @escaping successBlock, failure : @escaping failureBlock)  {
+    func totalEarnByDriver( success : @escaping successBlock, failure : @escaping failureBlock)  {
         ActivityIndicator.show()
-        ServicesClass_New.postDataFromURL(url: Apphelper.Constants.API.getPolicy , parameters: param, requestName: "") { (json, error) in
+
+        ServicesClass_New.getDataFromURlWith(url: Apphelper.Constants.API.earnByDriver, parameters: nil) { (json, error) in
+
             ActivityIndicator.hide()
-            
+
             if error == nil
             {
                 if self.isSuccess(info: json ?? Dictionary())
@@ -813,8 +815,9 @@ func resetPassword(param : Dictionary<String,Any>, success : @escaping successBl
             }else{
                 failure(error != nil ? error!.localizedDescription : Apphelper.Constants.FailureMessage.otpVerify)
             }
-            
+
         }
+
     }
     
     

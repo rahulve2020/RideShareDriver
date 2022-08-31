@@ -187,9 +187,6 @@ class UserDetailsVC: UIViewController {
         }
     
     
-    
-    
-    
     func ignorBooking() -> Void {
         var dicParam : Dictionary<String,Any> = Dictionary()
       

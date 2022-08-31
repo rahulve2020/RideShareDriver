@@ -27,6 +27,8 @@ class UserOtpVerificationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+       // let textField = UITextField()
+        pinCodeTxt.keyboardType = .numberPad
        
         // Do any additional setup after loading the view.
     }

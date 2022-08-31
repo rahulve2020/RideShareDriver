@@ -23,6 +23,7 @@ class RideHistoryVC: SidePanelBaseViewController, FSCalendarDataSource, FSCalend
     var selectedId : Int = 0
     
     var historyModel = [HistoryModel]()
+    var totalEarn = [TotalEarnDriverModel]()
     var selectDate : [String]?
     
     fileprivate lazy var dateFormatter: DateFormatter = {
@@ -143,6 +144,28 @@ class RideHistoryVC: SidePanelBaseViewController, FSCalendarDataSource, FSCalend
         }
         self.loadData()
         self.tableView.reloadData()
+            
+    }, failure: {errorMsg in
+        self.showOkAlert(errorMsg)
+    })
+        
+    }
+    
+    func getTotalEarnDriver() -> Void {
+        
+    AppServices.shared.totalEarnByDriver(success: { (data) in
+            print("getFaqDataFromServer\(data!)")
+
+        let datDict = data as? [String : Any]
+//        if datDict?["data"] is [[String : Any]] {
+//            let dataArray = datDict?["data"] as? [[String : Any]]
+//
+//            for item in dataArray! {
+//                let modelObj = HistoryModel.init(data: item)
+//                self.historyModel.append(modelObj)
+//            }
+ //       }
+      //  self.loadData()
             
     }, failure: {errorMsg in
         self.showOkAlert(errorMsg)

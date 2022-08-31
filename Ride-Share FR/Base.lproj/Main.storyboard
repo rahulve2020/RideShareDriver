@@ -9058,7 +9058,7 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uNv-tR-6Tg">
-                                <rect key="frame" x="15" y="417" width="345" height="250"/>
+                                <rect key="frame" x="15" y="397" width="345" height="270"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCu-ai-khO">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="60"/>
@@ -9210,7 +9210,7 @@
                                     <constraint firstItem="GCu-ai-khO" firstAttribute="leading" secondItem="uNv-tR-6Tg" secondAttribute="leading" id="mQo-Ah-1yT"/>
                                     <constraint firstItem="83q-qL-Gye" firstAttribute="leading" secondItem="uNv-tR-6Tg" secondAttribute="leading" constant="10" id="qIx-Jx-frh"/>
                                     <constraint firstItem="GCu-ai-khO" firstAttribute="top" secondItem="uNv-tR-6Tg" secondAttribute="top" id="sV6-V3-g5c"/>
-                                    <constraint firstAttribute="height" constant="250" id="tJL-b4-6L3"/>
+                                    <constraint firstAttribute="height" constant="270" id="tJL-b4-6L3"/>
                                     <constraint firstItem="yjN-E6-h4R" firstAttribute="leading" secondItem="uNv-tR-6Tg" secondAttribute="leading" constant="10" id="tYQ-su-IyV"/>
                                     <constraint firstItem="Ejm-d6-DK4" firstAttribute="leading" secondItem="uNv-tR-6Tg" secondAttribute="leading" constant="10" id="us6-7K-hTE"/>
                                     <constraint firstItem="yUc-Ef-lYI" firstAttribute="top" secondItem="2ot-0Q-z1X" secondAttribute="bottom" constant="10" id="whb-sZ-GlX"/>
@@ -9314,6 +9314,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bgo-O1-zKU" customClass="PinCodeTextField" customModule="PinCodeTextField">
                                         <rect key="frame" x="20" y="325" width="335" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" keyboardKey="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="PnS-Kx-4sr"/>
                                         </constraints>
