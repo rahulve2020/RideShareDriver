@@ -8916,8 +8916,8 @@
                                                 <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Delhi metro Staion , sector 53.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gw5-ga-COE">
-                                                <rect key="frame" x="10" y="87" width="232.5" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Delhi metro Staion , sector 53.." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gw5-ga-COE">
+                                                <rect key="frame" x="10" y="87" width="325" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -8935,8 +8935,8 @@
                                                 <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Delhi metro Staion , sector 75.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3D3-VV-H2a">
-                                                <rect key="frame" x="10" y="147" width="232" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Delhi metro Staion , sector 75.." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3D3-VV-H2a">
+                                                <rect key="frame" x="10" y="147" width="325" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -9016,6 +9016,8 @@
                                             <constraint firstAttribute="height" constant="250" id="Jly-hz-pWq"/>
                                             <constraint firstItem="NDX-X2-XUR" firstAttribute="top" secondItem="prC-K3-nKB" secondAttribute="bottom" constant="5" id="LqR-zJ-Qs3"/>
                                             <constraint firstItem="NDX-X2-XUR" firstAttribute="leading" secondItem="y5w-36-5s2" secondAttribute="leading" constant="10" id="PAO-k5-Ggt"/>
+                                            <constraint firstAttribute="trailing" secondItem="Gw5-ga-COE" secondAttribute="trailing" constant="10" id="ReH-1t-TUY"/>
+                                            <constraint firstAttribute="trailing" secondItem="3D3-VV-H2a" secondAttribute="trailing" constant="10" id="T2x-H1-Q3a"/>
                                             <constraint firstItem="3D3-VV-H2a" firstAttribute="leading" secondItem="y5w-36-5s2" secondAttribute="leading" constant="10" id="aWs-eq-iyR"/>
                                             <constraint firstItem="XmY-XA-nnZ" firstAttribute="top" secondItem="Gw5-ga-COE" secondAttribute="bottom" constant="10" id="gN5-kl-3Cc"/>
                                             <constraint firstItem="Gw5-ga-COE" firstAttribute="leading" secondItem="y5w-36-5s2" secondAttribute="leading" constant="10" id="gPd-D3-Tqe"/>
@@ -9135,8 +9137,8 @@
                                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Delhi metro Staion , sector 53.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ot-0Q-z1X">
-                                        <rect key="frame" x="10" y="87" width="232.5" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Delhi metro Staion , sector 53.." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ot-0Q-z1X">
+                                        <rect key="frame" x="10" y="87" width="325" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -9154,8 +9156,8 @@
                                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Delhi metro Staion , sector 75.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjN-E6-h4R">
-                                        <rect key="frame" x="10" y="147" width="232" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Delhi metro Staion , sector 75.." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjN-E6-h4R">
+                                        <rect key="frame" x="10" y="147" width="325" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -9195,6 +9197,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="2ot-0Q-z1X" secondAttribute="trailing" constant="10" id="AVe-5s-C1a"/>
                                     <constraint firstItem="Bsx-SM-TD1" firstAttribute="leading" secondItem="uNv-tR-6Tg" secondAttribute="leading" constant="10" id="H1g-QD-UH5"/>
                                     <constraint firstItem="Bsx-SM-TD1" firstAttribute="top" secondItem="yjN-E6-h4R" secondAttribute="bottom" constant="30" id="JCs-le-3HI"/>
                                     <constraint firstItem="Ejm-d6-DK4" firstAttribute="top" secondItem="GCu-ai-khO" secondAttribute="bottom" constant="5" id="Jh6-HY-YOr"/>
@@ -9203,6 +9206,7 @@
                                     <constraint firstItem="2ot-0Q-z1X" firstAttribute="top" secondItem="Ejm-d6-DK4" secondAttribute="bottom" constant="5" id="R3l-JH-y15"/>
                                     <constraint firstAttribute="trailing" secondItem="GCu-ai-khO" secondAttribute="trailing" id="cNt-ZX-x58"/>
                                     <constraint firstItem="2ot-0Q-z1X" firstAttribute="leading" secondItem="uNv-tR-6Tg" secondAttribute="leading" constant="10" id="kGg-NV-uWg"/>
+                                    <constraint firstAttribute="trailing" secondItem="yjN-E6-h4R" secondAttribute="trailing" constant="10" id="lGX-lc-6Hg"/>
                                     <constraint firstItem="GCu-ai-khO" firstAttribute="leading" secondItem="uNv-tR-6Tg" secondAttribute="leading" id="mQo-Ah-1yT"/>
                                     <constraint firstItem="83q-qL-Gye" firstAttribute="leading" secondItem="uNv-tR-6Tg" secondAttribute="leading" constant="10" id="qIx-Jx-frh"/>
                                     <constraint firstItem="GCu-ai-khO" firstAttribute="top" secondItem="uNv-tR-6Tg" secondAttribute="top" id="sV6-V3-g5c"/>

@@ -14,6 +14,8 @@ class UserPickUopDropOffDetailsVC: UIViewController {
     @IBOutlet weak var dropLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var userImg: UIImageView!
+    
+    var objResponse : Response?
     override func viewDidLoad() {
         super.viewDidLoad()
 

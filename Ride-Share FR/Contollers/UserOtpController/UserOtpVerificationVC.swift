@@ -51,7 +51,9 @@ class UserOtpVerificationVC: UIViewController {
          
         //    self.startRide.isHidden = false
         
-        }, failure: {errorMsg in })
+        }, failure: {errorMsg in
+            self.showOkAlert(errorMsg)
+        })
     }
     
 
