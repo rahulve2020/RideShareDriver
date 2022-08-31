@@ -38,7 +38,7 @@ class TotalFareDetailsVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+  
     func getDropUpAddressFromLatLon() {                                  // abhishek
             var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
             let lat: Double = objResponse?.dropLocation?.drop_latitude ?? 0.0

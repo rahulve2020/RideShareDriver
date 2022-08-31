@@ -2,23 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>LSApplicationQueriesSchemes</key>
-        <array>
-        <string>comgooglemaps</string>
-        <string>comgooglemaps-x-callback</string>
-        </array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This application will take the current location of the driver to find the best location for you</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This application will take the current location of the driver to find the best location for you</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>This application will take the current location of the driver to find the best location for you</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This application will make use of the Photo Library to upload identity of the user</string>
-	<key>NSCameraUsageDescription</key>
-	<string>This application will make use of the Photo Library to upload identity of the user</string>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>comgooglemaps</string>
+		<string>comgooglemaps-x-callback</string>
+	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict/>
 	<key>UIApplicationSceneManifest</key>

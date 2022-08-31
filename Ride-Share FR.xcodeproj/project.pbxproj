@@ -51,6 +51,7 @@
 		7D96C19D2862E225001E585C /* Ride_Share_FRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D96C19C2862E225001E585C /* Ride_Share_FRTests.swift */; };
 		7D96C1A72862E225001E585C /* Ride_Share_FRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D96C1A62862E225001E585C /* Ride_Share_FRUITests.swift */; };
 		7D96C1A92862E225001E585C /* Ride_Share_FRUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D96C1A82862E225001E585C /* Ride_Share_FRUITestsLaunchTests.swift */; };
+		7D9EB34A28BE3C020089A8CC /* UserPickUopDropOffDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9EB34928BE3C020089A8CC /* UserPickUopDropOffDetailsVC.swift */; };
 		7DA01CB02872EC8F0097A1EC /* SidePanelBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA01CA82872EC8F0097A1EC /* SidePanelBaseViewController.swift */; };
 		7DA01CB12872EC8F0097A1EC /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA01CA92872EC8F0097A1EC /* SideMenuCell.swift */; };
 		7DA01CB22872EC8F0097A1EC /* SSAnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA01CAB2872EC8F0097A1EC /* SSAnimationManager.swift */; };
@@ -170,6 +171,7 @@
 		7D96C1A22862E225001E585C /* Ride-Share FRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ride-Share FRUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D96C1A62862E225001E585C /* Ride_Share_FRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ride_Share_FRUITests.swift; sourceTree = "<group>"; };
 		7D96C1A82862E225001E585C /* Ride_Share_FRUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ride_Share_FRUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7D9EB34928BE3C020089A8CC /* UserPickUopDropOffDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPickUopDropOffDetailsVC.swift; sourceTree = "<group>"; };
 		7DA01CA82872EC8F0097A1EC /* SidePanelBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelBaseViewController.swift; sourceTree = "<group>"; };
 		7DA01CA92872EC8F0097A1EC /* SideMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		7DA01CAB2872EC8F0097A1EC /* SSAnimationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSAnimationManager.swift; sourceTree = "<group>"; };
@@ -573,6 +575,7 @@
 			isa = PBXGroup;
 			children = (
 				7DBED3152893C4510055F87E /* UserPickUpDropDetailsVC.swift */,
+				7D9EB34928BE3C020089A8CC /* UserPickUopDropOffDetailsVC.swift */,
 			);
 			path = UserDetailsController;
 			sourceTree = "<group>";
@@ -936,6 +939,7 @@
 				7DF55E70286B2DDD009A45EB /* ManageVehicleVC.swift in Sources */,
 				7D1C77E5286DA59A00CD2C45 /* ChangePasswordVC.swift in Sources */,
 				7D67A6F62862F9E700456803 /* TrackingVC.swift in Sources */,
+				7D9EB34A28BE3C020089A8CC /* UserPickUopDropOffDetailsVC.swift in Sources */,
 				7D1C77E8286DAA4A00CD2C45 /* RatingVC.swift in Sources */,
 				7D1C77E0286D845900CD2C45 /* ViewUtils.swift in Sources */,
 				7DA01CB02872EC8F0097A1EC /* SidePanelBaseViewController.swift in Sources */,
@@ -1179,12 +1183,13 @@
 				DEVELOPMENT_TEAM = TC9HP2A68W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ride-Share FR/Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "wants to access phots of camera";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Location will be used for to find nearby ride or driver.";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Location will be used for to find nearby ride or driver.";
+				INFOPLIST_KEY_CFBundleDisplayName = "SafeRide Driver";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This application will make use of the Photo Library to upload identity of the user";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This application will take the current location of the driver to find the best location for you";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This application will take the current location of the driver to find the best location for you";
 				INFOPLIST_KEY_NSLocationUsageDescription = "Location will be used for to find nearby ride or driver.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location will be used for to find nearby ride or driver.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "wants to access phots of camera";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This application will take the current location of the driver to find the best location for you";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This application will make use of the Photo Library to upload identity of the user";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1202,7 +1207,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1219,12 +1224,13 @@
 				DEVELOPMENT_TEAM = TC9HP2A68W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ride-Share FR/Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "wants to access phots of camera";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Location will be used for to find nearby ride or driver.";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Location will be used for to find nearby ride or driver.";
+				INFOPLIST_KEY_CFBundleDisplayName = "SafeRide Driver";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This application will make use of the Photo Library to upload identity of the user";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This application will take the current location of the driver to find the best location for you";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This application will take the current location of the driver to find the best location for you";
 				INFOPLIST_KEY_NSLocationUsageDescription = "Location will be used for to find nearby ride or driver.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location will be used for to find nearby ride or driver.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "wants to access phots of camera";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This application will take the current location of the driver to find the best location for you";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This application will make use of the Photo Library to upload identity of the user";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1242,7 +1248,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
