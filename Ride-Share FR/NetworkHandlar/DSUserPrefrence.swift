@@ -59,6 +59,15 @@ struct DSUserPrefrence {
             return UserDefaults.standard.value(forKey: "endTrip") as? Bool ?? false
         }
     }
+    static var UserPickUp  : Bool  {                    //abhishek
+        set {
+            UserDefaults.standard.set(newValue, forKey: "UserPickUp")
+            UserDefaults.standard.synchronize()
+        }
+        get {
+            return UserDefaults.standard.value(forKey: "UserPickUp") as? Bool ?? false
+        }
+    }
     
     static var FullName  : String  {
         set {

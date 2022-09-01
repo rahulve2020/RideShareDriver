@@ -10,6 +10,7 @@
 		058B9B457ED6648693DC97A4 /* Pods_Ride_Share_FRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17F3A95599BE87862A639D8 /* Pods_Ride_Share_FRTests.framework */; };
 		1C4EDDBA5865441A9FAD34BA /* Pods_Ride_Share_FR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB08A85FC2C40A0F47CEFE2 /* Pods_Ride_Share_FR.framework */; };
 		387162BF6A24C0A9E716D31C /* Pods_Ride_Share_FR_Ride_Share_FRUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCF2F8F147D9A06FFC99FD7 /* Pods_Ride_Share_FR_Ride_Share_FRUITests.framework */; };
+		4828BA5E28C099A100813572 /* Font in Resources */ = {isa = PBXBuildFile; fileRef = 4828BA5D28C099A100813572 /* Font */; };
 		7D11EBD428B6518B00AB8B3B /* CarAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D11EBD328B6518B00AB8B3B /* CarAnimator.swift */; };
 		7D11EBD628B6519200AB8B3B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D11EBD528B6519200AB8B3B /* Extensions.swift */; };
 		7D11EBD828B6519900AB8B3B /* LocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D11EBD728B6519900AB8B3B /* LocationTracker.swift */; };
@@ -123,6 +124,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4828BA5D28C099A100813572 /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Font; sourceTree = "<group>"; };
 		4AB08A85FC2C40A0F47CEFE2 /* Pods_Ride_Share_FR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ride_Share_FR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCF2F8F147D9A06FFC99FD7 /* Pods_Ride_Share_FR_Ride_Share_FRUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ride_Share_FR_Ride_Share_FRUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		728BC1213F1FBF4EB7D14307 /* Pods-Ride-Share FRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ride-Share FRTests.release.xcconfig"; path = "Target Support Files/Pods-Ride-Share FRTests/Pods-Ride-Share FRTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 		7D96C1842862E21E001E585C /* Ride-Share FR */ = {
 			isa = PBXGroup;
 			children = (
+				4828BA5D28C099A100813572 /* Font */,
 				7D11EBD228B6514800AB8B3B /* CarAnimationController */,
 				7DB0C03E28891D7F008C106A /* Ride-Share FR.entitlements */,
 				7DBC06FC2892A4D500E692F4 /* bingbong.caf */,
@@ -756,6 +759,7 @@
 				7D11EBDA28B6526B00AB8B3B /* mapstogpx20190207_115833.gpx in Resources */,
 				7DBD9F6E2869963600AE1655 /* MenuView.xib in Resources */,
 				7DBD9F722869965700AE1655 /* MenuCell.xib in Resources */,
+				4828BA5E28C099A100813572 /* Font in Resources */,
 				7D96C18F2862E225001E585C /* Assets.xcassets in Resources */,
 				7D96C18D2862E21E001E585C /* Main.storyboard in Resources */,
 				7D3996A028B3B7E400E25694 /* GoogleService-Info.plist in Resources */,

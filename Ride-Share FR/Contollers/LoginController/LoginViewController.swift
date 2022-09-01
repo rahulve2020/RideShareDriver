@@ -33,9 +33,7 @@ class LoginViewController: UIViewController {
         super.viewWillAppear(animated)
        
     }
-    
-    
-    
+
     
     func apiCallForLogin() {
         var dicParam : Dictionary<String,Any> = Dictionary()

@@ -12,6 +12,7 @@ import GoogleMaps
 import CoreLocation
 import Alamofire
 import SwiftyJSON
+import MapKit
 
 
 //protocol LocationControllerDelegate {
@@ -131,7 +132,7 @@ class DashboardViewController: SidePanelBaseViewController, PopupDelegate {
         let saddr = "\(locationStart.coordinate.latitude),\(locationStart.coordinate.longitude)"
          DSUserPrefrence.endTrip = true
         startOrder()
-      
+   //     self.openMapForPlace(strLatFrom: latDrop ?? 0.00, strlongFrom: longDrop ?? 0.00)
         if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
             UIApplication.shared.openURL(URL(string:"comgooglemaps://?saddr=\(saddr)&daddr=\(self.latDrop ?? 0.0),\(self.longDrop ?? 0.0)&directionsmode=driving&zoom=14&views=traffic")!)
         } else {
@@ -557,6 +558,7 @@ extension DashboardViewController: CLLocationManagerDelegate {
         self.pickLatitude = (newLocation!.coordinate.latitude) // get current location latitude
         self.pickLongitude = (newLocation!.coordinate.longitude) //get current location longitude
         locationStart = CLLocation(latitude: pickLatitude ?? 0.0, longitude: pickLongitude ?? 0.0)
+        
         //abhishek
 //        if let currentLocation = manager.location?.coordinate {
 //            print(currentLocation)
@@ -570,3 +572,23 @@ extension DashboardViewController: CLLocationManagerDelegate {
 }
 
 
+
+//MARK:- Apple map
+@available(iOS 13.0, *)
+extension DashboardViewController{
+    
+    func openMapForPlace(strLatFrom: Double, strlongFrom: Double) {
+        let regionDistance:CLLocationDistance = 10000
+        let coordinates = CLLocationCoordinate2DMake(strLatFrom, strlongFrom)
+        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = "Abhishek"
+        mapItem.openInMaps(launchOptions: options)
+        
+    }
+}

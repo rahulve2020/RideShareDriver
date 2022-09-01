@@ -40,6 +40,9 @@ class UserDetailsVC: UIViewController {
     var objResponse : Response?
     var lati : Double?
     var longi : Double?
+    
+    var pickLat : Double?
+    var pickLong : Double?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -65,6 +68,20 @@ class UserDetailsVC: UIViewController {
         self._view.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
+//    override func viewDidLayoutSubviews() {
+//        if DSUserPrefrence.endTrip == true {
+//            DSUserPrefrence.endTrip = false
+//            verifyView.isHidden = false
+//            _view.isHidden = true
+//            print("i am in layout sbview")
+//        } else {
+////        let vc = self.storyboard?.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
+////
+////        self.navigationController?.pushViewController(vc, animated: true)
+//        }
+//
+//    }
+    
     private func callNumber(phoneNumber: String) {
         guard let url = URL(string: "tel://\(phoneNumber)"),
             UIApplication.shared.canOpenURL(url) else {
@@ -80,6 +97,9 @@ class UserDetailsVC: UIViewController {
             //21.228124
             let lon: Double = objResponse?.pickuplocation?.pickup_longitude ?? 0.0
             //72.833770
+        
+        self.pickLat = objResponse?.pickuplocation?.pickup_latitude ?? 0.0
+        self.pickLong = objResponse?.pickuplocation?.pickup_longitude ?? 0.0
         
             let ceo: CLGeocoder = CLGeocoder()
             center.latitude = lat
@@ -214,8 +234,15 @@ class UserDetailsVC: UIViewController {
 
             debugPrint("changePassword:-\(data!)")
 
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "UserPickUopDropOffDetailsVC") as! UserPickUopDropOffDetailsVC
+            vc.pickLat = pickLat //objResponse?.pickuplocation?.pickup_latitude
+            vc.pickLong = pickLong //objResponse?.pickuplocation?.pickup_longitude
+            vc.objResponse = self.objResponse
+            print("coordinates",pickLat,pickLong)
+            self.navigationController?.pushViewController(vc, animated: true)
+            
             self._view.isHidden = true
-            self.verifyView.isHidden = false
+            self.verifyView.isHidden = true
             self.rqstDelegate?.rqstAcceptButtonAction(infoLocation: (objResponse?.pickuplocation)!, latDrop: lati ?? 0.0, longDrop: longi ?? 0.0)
 
         }, failure: {errorMsg in
@@ -275,3 +302,5 @@ class UserDetailsVC: UIViewController {
     @IBAction func messageBtn(_ sender: Any) {
     }
 }
+
+

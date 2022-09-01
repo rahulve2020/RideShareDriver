@@ -284,7 +284,7 @@ extension UIView {
     func setImg(){
     self.layer.borderWidth=1.0
     //self.img.layer.masksToBounds = false
-    self.layer.borderColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+    self.layer.borderColor = #colorLiteral(red: 0.203332454, green: 0.3568145037, blue: 0.6725091934, alpha: 1)
     self.layer.cornerRadius = self.frame.size.height/2
     self.clipsToBounds = true
         
