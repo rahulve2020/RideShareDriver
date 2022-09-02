@@ -11,6 +11,7 @@
 		1C4EDDBA5865441A9FAD34BA /* Pods_Ride_Share_FR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB08A85FC2C40A0F47CEFE2 /* Pods_Ride_Share_FR.framework */; };
 		387162BF6A24C0A9E716D31C /* Pods_Ride_Share_FR_Ride_Share_FRUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCF2F8F147D9A06FFC99FD7 /* Pods_Ride_Share_FR_Ride_Share_FRUITests.framework */; };
 		4828BA5E28C099A100813572 /* Font in Resources */ = {isa = PBXBuildFile; fileRef = 4828BA5D28C099A100813572 /* Font */; };
+		48BCFE0128C20ED30055CB93 /* RateUserByDriverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BCFE0028C20ED30055CB93 /* RateUserByDriverVC.swift */; };
 		7D11EBD428B6518B00AB8B3B /* CarAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D11EBD328B6518B00AB8B3B /* CarAnimator.swift */; };
 		7D11EBD628B6519200AB8B3B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D11EBD528B6519200AB8B3B /* Extensions.swift */; };
 		7D11EBD828B6519900AB8B3B /* LocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D11EBD728B6519900AB8B3B /* LocationTracker.swift */; };
@@ -125,6 +126,7 @@
 
 /* Begin PBXFileReference section */
 		4828BA5D28C099A100813572 /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Font; sourceTree = "<group>"; };
+		48BCFE0028C20ED30055CB93 /* RateUserByDriverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUserByDriverVC.swift; sourceTree = "<group>"; };
 		4AB08A85FC2C40A0F47CEFE2 /* Pods_Ride_Share_FR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ride_Share_FR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCF2F8F147D9A06FFC99FD7 /* Pods_Ride_Share_FR_Ride_Share_FRUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ride_Share_FR_Ride_Share_FRUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		728BC1213F1FBF4EB7D14307 /* Pods-Ride-Share FRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ride-Share FRTests.release.xcconfig"; path = "Target Support Files/Pods-Ride-Share FRTests/Pods-Ride-Share FRTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -274,6 +276,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		48BCFDFF28C20E880055CB93 /* RatingByDriverController */ = {
+			isa = PBXGroup;
+			children = (
+				48BCFE0028C20ED30055CB93 /* RateUserByDriverVC.swift */,
+			);
+			path = RatingByDriverController;
+			sourceTree = "<group>";
+		};
 		7848FDA12CE3775530EEB6E7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,6 +372,7 @@
 		7D67A6F12862E47700456803 /* Contollers */ = {
 			isa = PBXGroup;
 			children = (
+				48BCFDFF28C20E880055CB93 /* RatingByDriverController */,
 				7DDC9E7C28BCA4FF0001A08C /* TotalFareController */,
 				7DB62C7C28B4BC9B00B8198F /* UserOtpController */,
 				7DBED3142893C4090055F87E /* UserDetailsController */,
@@ -979,6 +990,7 @@
 				7D11EBD428B6518B00AB8B3B /* CarAnimator.swift in Sources */,
 				7DBD9F6C2869962300AE1655 /* MenuView.swift in Sources */,
 				7DB625562886FE10006AD196 /* ProfileModel.swift in Sources */,
+				48BCFE0128C20ED30055CB93 /* RateUserByDriverVC.swift in Sources */,
 				7DDF27652886AE130055E29D /* VehicleCategoryModel.swift in Sources */,
 				7DB62C7E28B4BC9B00B8198F /* UserOtpVerificationVC.swift in Sources */,
 				7D96C18A2862E21E001E585C /* ViewController.swift in Sources */,
@@ -1215,7 +1227,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1256,7 +1268,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

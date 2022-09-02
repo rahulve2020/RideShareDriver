@@ -52,14 +52,11 @@ class Apphelper: NSObject {
             static let getContactDetails : String = API.BaseUrl + "driver/submit-contact-us"
             static let getOrderComplete : String = API.BaseUrl + "driver/mark-order-complete"
             static let earnByDriver : String = API.BaseUrl + "driver/total-earn-by-driver"
+            static let bankingDetailsDriver : String = API.BaseUrl + "driver/get-bank-details"
             static let helpAndSupport : String = API.BaseUrl + "helpAndSupport"
             static let sharePost : String = API.BaseUrl + "sharePost"                  // abhishek
             
            
-           
-            static let updateBanquet : String = API.BaseUrl + "updateBanquet"
-          
-            
             static let submitRating : String = API.BaseUrl + "submitRating"
           
            // static let getBookingList : String = API.BaseUrl + "getBookingList"

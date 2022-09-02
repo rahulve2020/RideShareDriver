@@ -16,6 +16,8 @@ class EndTripDriverVC: UIViewController {
     var dropLat : Double?
     var dropLong : Double?
     
+    var objResponse : Response?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tripView.shadow()
@@ -42,6 +44,7 @@ class EndTripDriverVC: UIViewController {
         vc.orderId = orderId
         vc.dropLat = dropLat
         vc.dropLong = dropLong
+        vc.objResponse = objResponse
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

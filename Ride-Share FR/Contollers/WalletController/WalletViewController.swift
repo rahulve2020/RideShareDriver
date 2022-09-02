@@ -13,25 +13,42 @@ class WalletViewController: SidePanelBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        getBankDetails()
         vV.shadow()
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
+    func getBankDetails() -> Void {
+        
+    AppServices.shared.getBankingDetails(success: { (data) in
+            print("getFaqDataFromServer\(data!)")
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let datDict = data as? [String : Any]
+//        if datDict?["data"] is [[String : Any]] {
+//            let dataArray = datDict?["data"] as? [[String : Any]]
+//
+//            for item in dataArray! {
+//                let modelObj = HistoryModel.init(data: item)
+//                self.historyModel.append(modelObj)
+//            }
+//        }
+//        self.loadData()
+//        self.tableView.reloadData()
+        
+            
+    }, failure: {errorMsg in
+        self.showOkAlert(errorMsg)
+    })
+        
     }
-    */
+    
    
     
     @IBAction func updateAccountBtn(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "WalletAccountDetailsVC") as! WalletAccountDetailsVC
        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 

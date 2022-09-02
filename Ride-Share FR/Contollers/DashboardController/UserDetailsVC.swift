@@ -68,19 +68,7 @@ class UserDetailsVC: UIViewController {
         self._view.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
-//    override func viewDidLayoutSubviews() {
-//        if DSUserPrefrence.endTrip == true {
-//            DSUserPrefrence.endTrip = false
-//            verifyView.isHidden = false
-//            _view.isHidden = true
-//            print("i am in layout sbview")
-//        } else {
-////        let vc = self.storyboard?.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
-////
-////        self.navigationController?.pushViewController(vc, animated: true)
-//        }
-//
-//    }
+
     
     private func callNumber(phoneNumber: String) {
         guard let url = URL(string: "tel://\(phoneNumber)"),
@@ -235,15 +223,18 @@ class UserDetailsVC: UIViewController {
             debugPrint("changePassword:-\(data!)")
 
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "UserPickUopDropOffDetailsVC") as! UserPickUopDropOffDetailsVC
+            vc.orderId = objResponse?.orderId
+            vc.navLat = self.lati
+            vc.navLong = self.longi
             vc.pickLat = pickLat //objResponse?.pickuplocation?.pickup_latitude
             vc.pickLong = pickLong //objResponse?.pickuplocation?.pickup_longitude
             vc.objResponse = self.objResponse
             print("coordinates",pickLat,pickLong)
             self.navigationController?.pushViewController(vc, animated: true)
             
-            self._view.isHidden = true
-            self.verifyView.isHidden = true
-            self.rqstDelegate?.rqstAcceptButtonAction(infoLocation: (objResponse?.pickuplocation)!, latDrop: lati ?? 0.0, longDrop: longi ?? 0.0)
+//            self._view.isHidden = true
+//            self.verifyView.isHidden = true
+//            self.rqstDelegate?.rqstAcceptButtonAction(infoLocation: (objResponse?.pickuplocation)!, latDrop: lati ?? 0.0, longDrop: longi ?? 0.0)
 
         }, failure: {errorMsg in
             self.showOkAlert(errorMsg)

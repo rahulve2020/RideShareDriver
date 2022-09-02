@@ -18,9 +18,6 @@ class TotalFareDetails: NSObject {
         self.total_time = data["total_time"] as? Int ?? 0
       
         self.total_distance = data["total_distance"] as? String ?? ""
-    
 
-        
-       
     }
 }

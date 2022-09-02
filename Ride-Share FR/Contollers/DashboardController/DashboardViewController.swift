@@ -107,7 +107,7 @@ class DashboardViewController: SidePanelBaseViewController, PopupDelegate {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        self.trackBtn.isHidden = false
+      //  self.trackBtn.isHidden = false
         print("i am in view will apper")
     }
     
@@ -118,6 +118,7 @@ class DashboardViewController: SidePanelBaseViewController, PopupDelegate {
             vc.orderId = orderId
             vc.dropLat = pickLatitude
             vc.dropLong = pickLongitude
+            vc.objResponse = objResponse
         self.navigationController?.pushViewController(vc, animated: true)
         print("i am in layout sbview")
         } else {

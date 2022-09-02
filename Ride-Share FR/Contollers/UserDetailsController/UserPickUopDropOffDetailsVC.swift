@@ -29,6 +29,12 @@ class UserPickUopDropOffDetailsVC: UIViewController {
     
     var pickLat : Double?
     var pickLong : Double?
+    
+    var orderId : String?
+    var navLat : Double?
+    var navLong : Double?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,12 +63,11 @@ class UserPickUopDropOffDetailsVC: UIViewController {
     override func viewDidLayoutSubviews() {
         if DSUserPrefrence.UserPickUp == true {
             DSUserPrefrence.UserPickUp = false
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "UserDetailsVC") as! UserDetailsVC
-
-            self.addChild(vc)
-            vc.view.frame = self.view.frame
-            self.view.addSubview(vc.view)
-            vc.didMove(toParent: self)
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "UserOtpVerificationVC") as! UserOtpVerificationVC
+            vc.orderId = objResponse?.orderId
+            vc.navLat = self.navLat
+            vc.navLong = self.navLong
+            self.navigationController?.pushViewController(vc, animated: true)
             print("i am in layout sbview")
         } else {
 //        let vc = self.storyboard?.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
@@ -219,9 +224,10 @@ class UserPickUopDropOffDetailsVC: UIViewController {
         
     }
     @IBAction func pickUpLocationBtn(_ sender: Any) {
+      //  DSUserPrefrence.UserPickUp = true
         let saddr = "\(locationStart.coordinate.latitude),\(locationStart.coordinate.longitude)"
         let destination = "\(self.pickLat ?? 0.0),\(self.pickLong ?? 0.0)"
-      
+        DSUserPrefrence.UserPickUp = true
         if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
             UIApplication.shared.openURL(URL(string:"comgooglemaps://?saddr=\(saddr)&daddr=\(destination)&directionsmode=driving&zoom=14&views=traffic")!)
         } else {

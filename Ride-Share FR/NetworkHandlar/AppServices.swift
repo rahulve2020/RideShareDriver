@@ -872,11 +872,13 @@ func resetPassword(param : Dictionary<String,Any>, success : @escaping successBl
             }
         }
     }
-    func updateBanquetList(param : Dictionary<String,Any>, success : @escaping successBlock, failure : @escaping failureBlock)  {
+    func getBankingDetails( success : @escaping successBlock, failure : @escaping failureBlock)  {
         ActivityIndicator.show()
-        ServicesClass_New.postDataFromURL(url: Apphelper.Constants.API.updateBanquet , parameters: param, requestName: "") { (json, error) in
+
+        ServicesClass_New.getDataFromURlWith(url: Apphelper.Constants.API.bankingDetailsDriver, parameters: nil) { (json, error) in
+
             ActivityIndicator.hide()
-            
+
             if error == nil
             {
                 if self.isSuccess(info: json ?? Dictionary())
@@ -893,8 +895,9 @@ func resetPassword(param : Dictionary<String,Any>, success : @escaping successBl
             }else{
                 failure(error != nil ? error!.localizedDescription : Apphelper.Constants.FailureMessage.otpVerify)
             }
-            
+
         }
+
     }
     func getAcceptBooking(param : Dictionary<String,Any>, success : @escaping successBlock, failure : @escaping failureBlock)  {
         ActivityIndicator.show()
