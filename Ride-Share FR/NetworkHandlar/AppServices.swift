@@ -821,9 +821,10 @@ func resetPassword(param : Dictionary<String,Any>, success : @escaping successBl
     }
     
     
-    func helpSupport(param : Dictionary<String,Any>, success : @escaping successBlock, failure : @escaping failureBlock)  {
+    func ratingDriverList( success : @escaping successBlock, failure : @escaping failureBlock)  {
         ActivityIndicator.show()
-        ServicesClass_New.postDataFromURL(url: Apphelper.Constants.API.helpAndSupport , parameters: param, requestName: "") { (json, error) in
+
+        ServicesClass_New.getDataFromURlWith(url: Apphelper.Constants.API.getRatingList, parameters: nil) { (json, error) in
 
             ActivityIndicator.hide()
 
@@ -845,6 +846,7 @@ func resetPassword(param : Dictionary<String,Any>, success : @escaping successBl
             }
 
         }
+
     }
     
     func oderCompleteByDriver(param : Dictionary<String,Any>, success : @escaping successBlock, failure : @escaping failureBlock)  {
@@ -1029,35 +1031,31 @@ func ignorBookingDetails(param : Dictionary<String,Any>, success : @escaping suc
             
         }
     }
-//    
-//    func getVideoReviewDetilsFromServer(param : Dictionary<String,Any>, success : @escaping successBlock, failure : @escaping failureBlock)  {
-//        ActivityIndicator.show()
-//        
-//        ServicesClass_New.postDataFromURL(url: Apphelper.Constants.API.request_review, parameters: param, requestName: "") { (json, error) in
-//            
-//            ActivityIndicator.hide()
-//            
-//            if error == nil
-//            {
-//                if self.isSuccess(info: json ?? Dictionary())
-//                {
-//                    success(json)
-//                    return
-//                }else if let strMsg = json?["message"] as? String{
-//                    failure(strMsg)
-//                    return
-//                }
-//            }
-//            else if error!.localizedDescription.contains("JSON could not be serialized"){
-//                failure("Problem in connecting to Server. Please try again!")
-//            }else{
-//                failure(error != nil ? error!.localizedDescription : Apphelper.Constants.FailureMessage.otpVerify)
-//            }
-//            
-//        }
-//    }
-//    
-//    
+ func driverPostRating(param : Dictionary<String,Any>, success : @escaping successBlock, failure : @escaping failureBlock)  {
+    ActivityIndicator.show()
+    ServicesClass_New.postDataFromURL(url: Apphelper.Constants.API.getDriverPostRating , parameters: param, requestName: "") { (json, error) in
+        
+        ActivityIndicator.hide()
+        if error == nil
+        {
+            if self.isSuccess(info: json ?? Dictionary())
+            {
+                success(json)
+                return
+            }else if let strMsg = json?["message"] as? String{
+                failure(strMsg)
+                return
+            }
+        }
+            
+        else if error!.localizedDescription.contains("JSON could not be serialized")
+        {
+            failure("Problem in connecting to Server. Please try again!")
+        }else{
+            failure(error != nil ? error!.localizedDescription : Apphelper.Constants.FailureMessage.otpVerify)
+        }
+    }
+}
 //    
 //    func getProjectDetilsFromServer(param : Dictionary<String,Any>, success : @escaping successBlock, failure : @escaping failureBlock)  {
 //        ActivityIndicator.show()

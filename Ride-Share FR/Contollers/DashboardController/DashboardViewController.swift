@@ -338,15 +338,21 @@ class DashboardViewController: SidePanelBaseViewController, PopupDelegate {
             let objDriver = Response.objUserCredentials(fromDict: jsonData)
            // print(objDriver?.dropLocation?.drop_latitude)
             self.orderId = objDriver?.orderId
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "UserDetailsVC") as! UserDetailsVC
-        
-            self.addChild(vc)
-            vc.objResponse = objDriver
-            vc.view.frame = self.view.frame
-            vc.rqstDelegate = self
-            self.view.addSubview(vc.view)
-            vc.didMove(toParent: self)
-        
+            if objDriver?.notification_type == "new_order" {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "UserDetailsVC") as! UserDetailsVC
+            
+                self.addChild(vc)
+                vc.objResponse = objDriver
+                vc.view.frame = self.view.frame
+                vc.rqstDelegate = self
+                self.view.addSubview(vc.view)
+                vc.didMove(toParent: self)
+            
+            } else {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
      }
         
     }

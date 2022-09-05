@@ -235,10 +235,14 @@ extension SideMenuController : UITableViewDelegate, UITableViewDataSource{
             identifier = "RatingVC"
             break
         case 7:
-            let activityVC = UIActivityViewController(activityItems: ["www.google.com"], applicationActivities: nil)
-            activityVC.popoverPresentationController?.sourceView = self.view
-           break
-            //identifier = ""
+            identifier = ""
+            if let name = URL(string: "https://itunes.apple.com/us/app/myapp/idxxxxxxxx?ls=1&mt=8"), !name.absoluteString.isEmpty {
+              let objectsToShare = [name]
+              let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+              self.present(activityVC, animated: true, completion: nil)
+            } else {
+              // show alert for not available
+            }
             break
         case 8:
             identifier = "ContactUsVC"
@@ -250,15 +254,16 @@ extension SideMenuController : UITableViewDelegate, UITableViewDataSource{
         }
         self.dismissSidePanel()
         if identifier == "AboutUsVC" {
-            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: identifier!) as! NotificationVC
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: identifier!) as! AboutUsVC
             
             //vc.isCameFromSideMenu = true
            self.navigationController?.pushViewController(vc, animated: true)
             return
         }
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: identifier!)
-        self.navigationController?.pushViewController(vc, animated: true)
-        
+        if identifier != "" {
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: identifier!)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func dismissSidePanel(){

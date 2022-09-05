@@ -16,6 +16,8 @@ class RatingViewCell: UITableViewCell {
     @IBOutlet weak var ratingView: CosmosView!
     @IBOutlet weak var dateLbl: UILabel!
     
+    var updatedDate: String = String()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,4 +31,37 @@ class RatingViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    var info : DriverRatingModel?   {
+        didSet {
+            self.tittleLbl.text = self.info?.ratedUser_name
+            self.txtLbl.text = self.info?.comment
+
+  
+            ratingView.rating =  Double(self.info?.rating ?? 0)
+            let model = (self.info?.createdAt)!
+            let dateFormatter = DateFormatter()
+            dateFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0) as TimeZone
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"//"yyyy-MM-dd HH:mm:ss"
+            let valideDate = dateFormatter.date(from: model)
+            dateFormatter.date(from: "at")
+            dateFormatter.dateFormat = "dd MMM yyyy" //MMM dd, yyyy 'at' h:mm a"
+            updatedDate = dateFormatter.string(from: valideDate ?? Date())
+            self.dateLbl.text = updatedDate
+
+            img.sd_setImage(with: URL.init(string: info?.ratedUser_profile_pic ?? "")) { (image, error, cache, urls) in
+
+                if (error != nil) {
+
+                }else {
+                    self.img.image = image
+                }
+        }
+    }
+
 }
+}
+
+
+//if let urlImage = URL(string: profileModel?.driving_licence ?? "") {
+//  licenceImg.sd_setImage(with: urlImage, completed: nil)
+//}

@@ -11,9 +11,13 @@ class RatingVC: SidePanelBaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var vV: UIView!
+    
+    var driverRatingList = [DriverRatingModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        ratingList()
         vV.shadow()
         tableView.delegate = self
         tableView.dataSource = self
@@ -21,24 +25,35 @@ class RatingVC: SidePanelBaseViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
+    func ratingList() -> Void {
+        
+    AppServices.shared.ratingDriverList(success: { (data) in
+            print("getFaqDataFromServer\(data!)")
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let datDict = data as? [String : Any]
+        if datDict?["data"] is [[String : Any]] {
+        let dataArray = datDict?["data"] as? [[String : Any]]
+
+            for item in dataArray! {
+                let modelObj = DriverRatingModel.init(data: item)
+                self.driverRatingList.append(modelObj)
+            }
+        }
+        self.tableView.reloadData()
+            
+    }, failure: {errorMsg in
+        self.showOkAlert(errorMsg)
+    })
+        
     }
-    */
     
     
 }
 @available(iOS 13.0, *)
 extension RatingVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
     
-        return 4
+    return driverRatingList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,6 +61,7 @@ extension RatingVC: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "RatingViewCell") as! RatingViewCell
         cell.selectionStyle = .none
+        cell.info = self.driverRatingList[indexPath.row]
    
         return cell
     }

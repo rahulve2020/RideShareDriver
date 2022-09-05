@@ -189,4 +189,10 @@ class TotalFareDetailsVC: UIViewController {
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    @IBAction func arrivedBtn(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RateUserByDriverVC") as! RateUserByDriverVC
+        vc.ratedId = totalFareDetails?.userId
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
 }

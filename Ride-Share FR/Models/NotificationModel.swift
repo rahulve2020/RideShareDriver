@@ -7,6 +7,7 @@
 import Foundation     //abhishek
 
 struct Response: Codable {
+    let notification_type : String?
     let orderId: String?
     let userInfo : UserInfo?
     let pickuplocation : PickLocation?

@@ -38,6 +38,7 @@ class UserPickUopDropOffDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        userImg.setImg()
         getPickUpAddressFromLatLon()
         getDropUpAddressFromLatLon()
         self.nameLbl.text = objResponse?.userInfo?.name
@@ -224,10 +225,10 @@ class UserPickUopDropOffDetailsVC: UIViewController {
         
     }
     @IBAction func pickUpLocationBtn(_ sender: Any) {
-      //  DSUserPrefrence.UserPickUp = true
+        DSUserPrefrence.UserPickUp = true
         let saddr = "\(locationStart.coordinate.latitude),\(locationStart.coordinate.longitude)"
         let destination = "\(self.pickLat ?? 0.0),\(self.pickLong ?? 0.0)"
-        DSUserPrefrence.UserPickUp = true
+     //   DSUserPrefrence.UserPickUp = true
         if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
             UIApplication.shared.openURL(URL(string:"comgooglemaps://?saddr=\(saddr)&daddr=\(destination)&directionsmode=driving&zoom=14&views=traffic")!)
         } else {

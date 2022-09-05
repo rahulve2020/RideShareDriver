@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RtY-4Z-IoD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RtY-4Z-IoD">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -7629,6 +7629,39 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1Y-74-fPZ">
+                                <rect key="frame" x="28" y="527" width="319" height="44"/>
+                                <color key="backgroundColor" red="0.23921568630000001" green="0.35294117650000001" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="319" id="6Sl-8R-CF1"/>
+                                    <constraint firstAttribute="height" constant="44" id="k3r-1K-MmG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="ARRIVED SAFE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="arrivedBtn:" destination="Gkw-zJ-S5S" eventType="touchUpInside" id="MD0-fs-YrA"/>
+                                    <action selector="endTripBtn:" destination="1Ct-ZV-tcX" eventType="touchUpInside" id="LHd-cE-evc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mjt-IA-FcV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -7641,6 +7674,7 @@
                             <constraint firstItem="F4F-cO-bDt" firstAttribute="top" secondItem="fNP-yA-96F" secondAttribute="bottom" constant="15" id="6DA-K4-BdL"/>
                             <constraint firstAttribute="trailing" secondItem="a9R-V4-ka4" secondAttribute="trailing" id="79T-7V-2jt"/>
                             <constraint firstItem="mjt-IA-FcV" firstAttribute="trailing" secondItem="gYu-ML-dpv" secondAttribute="trailing" constant="20" id="7Mf-yN-Di7"/>
+                            <constraint firstItem="J1Y-74-fPZ" firstAttribute="centerX" secondItem="aQJ-iM-yIQ" secondAttribute="centerX" id="7YH-9d-Xog"/>
                             <constraint firstItem="mjt-IA-FcV" firstAttribute="trailing" secondItem="z4E-9G-wxl" secondAttribute="trailing" id="9ee-bS-Hff"/>
                             <constraint firstItem="fNP-yA-96F" firstAttribute="top" secondItem="n3V-VT-oFX" secondAttribute="bottom" constant="15" id="Bzn-IH-OdR"/>
                             <constraint firstItem="a9R-V4-ka4" firstAttribute="leading" secondItem="mjt-IA-FcV" secondAttribute="leading" id="C2D-nA-e5D"/>
@@ -7666,6 +7700,7 @@
                             <constraint firstItem="z4E-9G-wxl" firstAttribute="top" secondItem="a9R-V4-ka4" secondAttribute="bottom" constant="10" id="lg0-dj-GX4"/>
                             <constraint firstItem="UrX-Lm-nGi" firstAttribute="top" secondItem="z4E-9G-wxl" secondAttribute="bottom" constant="20" id="myI-89-XJH"/>
                             <constraint firstItem="r3R-Kp-uwo" firstAttribute="top" secondItem="rV3-nX-AJv" secondAttribute="bottom" constant="15" id="oAY-pJ-gG9"/>
+                            <constraint firstItem="J1Y-74-fPZ" firstAttribute="top" secondItem="WyG-NK-QAZ" secondAttribute="bottom" constant="85" id="q34-Bc-fit"/>
                             <constraint firstItem="b3n-ef-ivb" firstAttribute="top" secondItem="aza-mm-haL" secondAttribute="bottom" constant="10" id="qZR-M3-0gw"/>
                             <constraint firstItem="F4F-cO-bDt" firstAttribute="leading" secondItem="RBJ-TE-kyt" secondAttribute="trailing" constant="15" id="tDR-Zf-oBq"/>
                             <constraint firstItem="gYu-ML-dpv" firstAttribute="centerY" secondItem="b3n-ef-ivb" secondAttribute="centerY" id="tXO-FE-9Pa"/>

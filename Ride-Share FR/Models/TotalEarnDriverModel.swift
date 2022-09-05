@@ -8,11 +8,13 @@
 import Foundation
 
 class TotalEarnDriverModel: NSObject {
+   // var userId : String = ""
     var totalAmount : String = ""
     var tipAmount : String = ""
     
     
     init (data: [String:Any]){
+      //  self.userId = data["userId"] as? String ?? ""
         self.totalAmount = data["totalAmount"] as? String ?? ""
         self.tipAmount = data["tipAmount"] as? String ?? ""
     }

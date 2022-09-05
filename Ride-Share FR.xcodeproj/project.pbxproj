@@ -10,7 +10,6 @@
 		058B9B457ED6648693DC97A4 /* Pods_Ride_Share_FRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17F3A95599BE87862A639D8 /* Pods_Ride_Share_FRTests.framework */; };
 		1C4EDDBA5865441A9FAD34BA /* Pods_Ride_Share_FR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB08A85FC2C40A0F47CEFE2 /* Pods_Ride_Share_FR.framework */; };
 		387162BF6A24C0A9E716D31C /* Pods_Ride_Share_FR_Ride_Share_FRUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCF2F8F147D9A06FFC99FD7 /* Pods_Ride_Share_FR_Ride_Share_FRUITests.framework */; };
-		4828BA5E28C099A100813572 /* Font in Resources */ = {isa = PBXBuildFile; fileRef = 4828BA5D28C099A100813572 /* Font */; };
 		48BCFE0128C20ED30055CB93 /* RateUserByDriverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BCFE0028C20ED30055CB93 /* RateUserByDriverVC.swift */; };
 		7D11EBD428B6518B00AB8B3B /* CarAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D11EBD328B6518B00AB8B3B /* CarAnimator.swift */; };
 		7D11EBD628B6519200AB8B3B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D11EBD528B6519200AB8B3B /* Extensions.swift */; };
@@ -43,6 +42,10 @@
 		7D67A6F62862F9E700456803 /* TrackingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D67A6F52862F9E700456803 /* TrackingVC.swift */; };
 		7D67A6F82862F9F600456803 /* EarnMoneyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D67A6F72862F9F600456803 /* EarnMoneyVC.swift */; };
 		7D67A6FB28633A9400456803 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D67A6FA28633A9300456803 /* LoginViewController.swift */; };
+		7D7FC1AA28C5E277007E2562 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D7FC1A728C5E277007E2562 /* Roboto-Medium.ttf */; };
+		7D7FC1AB28C5E277007E2562 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D7FC1A828C5E277007E2562 /* Roboto-Regular.ttf */; };
+		7D7FC1AC28C5E277007E2562 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D7FC1A928C5E277007E2562 /* Roboto-Bold.ttf */; };
+		7D7FC1AE28C5E2D2007E2562 /* DriveRatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7FC1AD28C5E2D2007E2562 /* DriveRatingModel.swift */; };
 		7D8CCCAE2881B40600154DB2 /* VehicleDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8CCCAD2881B40600154DB2 /* VehicleDetailsModel.swift */; };
 		7D96C1862862E21E001E585C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D96C1852862E21E001E585C /* AppDelegate.swift */; };
 		7D96C1882862E21E001E585C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D96C1872862E21E001E585C /* SceneDelegate.swift */; };
@@ -125,7 +128,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4828BA5D28C099A100813572 /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Font; sourceTree = "<group>"; };
 		48BCFE0028C20ED30055CB93 /* RateUserByDriverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUserByDriverVC.swift; sourceTree = "<group>"; };
 		4AB08A85FC2C40A0F47CEFE2 /* Pods_Ride_Share_FR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ride_Share_FR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCF2F8F147D9A06FFC99FD7 /* Pods_Ride_Share_FR_Ride_Share_FRUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ride_Share_FR_Ride_Share_FRUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +164,10 @@
 		7D67A6F52862F9E700456803 /* TrackingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingVC.swift; sourceTree = "<group>"; };
 		7D67A6F72862F9F600456803 /* EarnMoneyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarnMoneyVC.swift; sourceTree = "<group>"; };
 		7D67A6FA28633A9300456803 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7D7FC1A728C5E277007E2562 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		7D7FC1A828C5E277007E2562 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		7D7FC1A928C5E277007E2562 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		7D7FC1AD28C5E2D2007E2562 /* DriveRatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveRatingModel.swift; sourceTree = "<group>"; };
 		7D8CCCAD2881B40600154DB2 /* VehicleDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsModel.swift; sourceTree = "<group>"; };
 		7D96C1822862E21E001E585C /* Ride-Share FR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ride-Share FR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D96C1852862E21E001E585C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -419,6 +425,16 @@
 			path = LoginController;
 			sourceTree = "<group>";
 		};
+		7D7FC1A628C5E277007E2562 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				7D7FC1A728C5E277007E2562 /* Roboto-Medium.ttf */,
+				7D7FC1A828C5E277007E2562 /* Roboto-Regular.ttf */,
+				7D7FC1A928C5E277007E2562 /* Roboto-Bold.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		7D8CCCAC2881B3EE00154DB2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +447,7 @@
 				7DC8A3C228B8C88000DCBEA3 /* StartRideModel.swift */,
 				7DDC9E8128BCD8330001A08C /* TotalFareDetails.swift */,
 				7DE2830A28BF5E6E00B8B55A /* TotalEarnDriverModel.swift */,
+				7D7FC1AD28C5E2D2007E2562 /* DriveRatingModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -460,7 +477,7 @@
 		7D96C1842862E21E001E585C /* Ride-Share FR */ = {
 			isa = PBXGroup;
 			children = (
-				4828BA5D28C099A100813572 /* Font */,
+				7D7FC1A628C5E277007E2562 /* Font */,
 				7D11EBD228B6514800AB8B3B /* CarAnimationController */,
 				7DB0C03E28891D7F008C106A /* Ride-Share FR.entitlements */,
 				7DBC06FC2892A4D500E692F4 /* bingbong.caf */,
@@ -768,13 +785,15 @@
 			files = (
 				7D96C1922862E225001E585C /* LaunchScreen.storyboard in Resources */,
 				7D11EBDA28B6526B00AB8B3B /* mapstogpx20190207_115833.gpx in Resources */,
+				7D7FC1AB28C5E277007E2562 /* Roboto-Regular.ttf in Resources */,
 				7DBD9F6E2869963600AE1655 /* MenuView.xib in Resources */,
+				7D7FC1AC28C5E277007E2562 /* Roboto-Bold.ttf in Resources */,
 				7DBD9F722869965700AE1655 /* MenuCell.xib in Resources */,
-				4828BA5E28C099A100813572 /* Font in Resources */,
 				7D96C18F2862E225001E585C /* Assets.xcassets in Resources */,
 				7D96C18D2862E21E001E585C /* Main.storyboard in Resources */,
 				7D3996A028B3B7E400E25694 /* GoogleService-Info.plist in Resources */,
 				7D11EBDC28B6527200AB8B3B /* mapStyle2.json in Resources */,
+				7D7FC1AA28C5E277007E2562 /* Roboto-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1013,6 +1032,7 @@
 				7D3031D2286C1EA700C7E5D6 /* UpdateDocumentVC.swift in Sources */,
 				7D3031D4286C1EE500C7E5D6 /* UpadateDocumentCell.swift in Sources */,
 				7DA01CB52872EC8F0097A1EC /* BaseNavigationController.swift in Sources */,
+				7D7FC1AE28C5E2D2007E2562 /* DriveRatingModel.swift in Sources */,
 				7DBD9F702869965100AE1655 /* MenuCell.swift in Sources */,
 				7D11EBD628B6519200AB8B3B /* Extensions.swift in Sources */,
 				7D1C77D2286D827A00CD2C45 /* AppHelper.swift in Sources */,

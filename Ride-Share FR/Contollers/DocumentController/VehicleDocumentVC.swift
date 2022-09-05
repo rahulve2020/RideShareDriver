@@ -164,30 +164,7 @@ class VehicleDocumentVC: UIViewController, UIImagePickerControllerDelegate, UINa
         }
         picker.dismiss(animated: true, completion: nil)
     }
-    
-//    func getUpdateDocument() -> Void {
-//        var dicParam : Dictionary<String,Any> = Dictionary()
-//       // dicParam["email"] = DSUserPrefrence.email_address
-//       // dicParam["mobile"] = DSUserPrefrence.contact_number
-//        dicParam["email"] = DSUserPrefrence.email_address
-//        dicParam["driving_licence"] = ""//txtNewPassword.text
-//        dicParam["vehicle_insurance"] = ""
-//        dicParam["credential"] = ""
-//        dicParam["qualification"] = ""
-//
-//        AppServices.shared.addDocument(param: dicParam, success: { (data) in
-//
-//            debugPrint("updateProfile:-\(data!)")
-//            let dictdata = data as! [String : Any]
-//            let dataObj = dictdata["data"] as! [String : Any]
-//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-//
-//            self.navigationController?.pushViewController(vc, animated: true)
-//
-//        }, failure: {errorMsg in
-//            self.showOkAlert(errorMsg)
-//        })
-//    }
+
     
     func uploadPic()-> Void{
         

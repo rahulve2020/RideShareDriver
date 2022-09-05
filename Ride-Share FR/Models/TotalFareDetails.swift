@@ -8,6 +8,7 @@
 import Foundation
 
 class TotalFareDetails: NSObject {
+    var userId : String = ""
     var total_Charge : String = ""
     var total_time : Int = 0
     var total_distance : String = ""
@@ -16,6 +17,7 @@ class TotalFareDetails: NSObject {
     init (data: [String:Any]){
         self.total_Charge = data["total_Charge"] as? String ?? ""
         self.total_time = data["total_time"] as? Int ?? 0
+        self.userId = data["userId"] as? String ?? ""
       
         self.total_distance = data["total_distance"] as? String ?? ""
 
