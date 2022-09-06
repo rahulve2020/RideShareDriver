@@ -124,6 +124,7 @@ PODS:
   - SDWebImage/Core (5.12.6)
   - SidebarOverlay (4.2.2)
   - SideMenu (6.5.0)
+  - Stripe (15.0.3)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
@@ -144,6 +145,7 @@ DEPENDENCIES:
   - SDWebImage (~> 5.0)
   - SidebarOverlay
   - SideMenu
+  - Stripe (~> 15.0.1)
   - SwiftyJSON
 
 SPEC REPOS:
@@ -175,6 +177,7 @@ SPEC REPOS:
     - SDWebImage
     - SidebarOverlay
     - SideMenu
+    - Stripe
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -205,8 +208,9 @@ SPEC CHECKSUMS:
   SDWebImage: a47aea9e3d8816015db4e523daff50cfd294499d
   SidebarOverlay: a5365455a2f9d54f70d0765764ca1a2806b1b11d
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+  Stripe: db667d8dcf6cfa216ee9ad9b937c7126ca9f8c35
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 3937cb2c6ec12aaa15762635a3230ae61f3cc05e
+PODFILE CHECKSUM: 87c5bf564d602a66aeb647dd28008975e70ed400
 
 COCOAPODS: 1.11.2

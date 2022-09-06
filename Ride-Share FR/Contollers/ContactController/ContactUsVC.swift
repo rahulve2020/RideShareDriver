@@ -21,15 +21,18 @@ class ContactUsVC: SidePanelBaseViewController {
     @IBOutlet weak var txtView: UIView!
     
     var countryCodeSign = "+1"
+    var placeholder: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         vV.shadow()
         load()
-        msgView.text = "Description"
+        msgView.delegate = self
+        placeholder = "Description...."
+        msgView.text = placeholder
         msgView.textColor = UIColor.lightGray
-        msgView.returnKeyType = .done
+        msgView.selectedTextRange = msgView.textRange(from: msgView.beginningOfDocument, to: msgView.beginningOfDocument)
         // Do any additional setup after loading the view.
     }
     func load() {
@@ -62,7 +65,6 @@ class ContactUsVC: SidePanelBaseViewController {
               //  self.navigationController?.popViewController(animated: true)
             }
 
-
         }, failure: {errorMsg in
             self.showOkAlert(errorMsg)
         })
@@ -74,7 +76,7 @@ class ContactUsVC: SidePanelBaseViewController {
 }
 
 @available(iOS 13.0, *)
-extension ContactUsVC : UITextFieldDelegate, UITextViewDelegate{
+extension ContactUsVC : UITextFieldDelegate{
     
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -113,6 +115,41 @@ extension ContactUsVC : UITextFieldDelegate, UITextViewDelegate{
         }
       
     }
+//    func textViewDidBeginEditing(_ textView: UITextView) {
+//        if textView == msgView {
+//            txtView.layer.borderColor = #colorLiteral(red: 0.06241328269, green: 0.1183073893, blue: 0.1983669996, alpha: 1)
+//            txtView.layer.borderWidth = 1
+//        }
+//
+//    }
+    
+}
+@available(iOS 13.0, *)
+extension ContactUsVC : UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let currentText:String = textView.text
+        let updatedText = (currentText as NSString).replacingCharacters(in: range, with: text)
+        if updatedText.isEmpty {
+            textView.text = placeholder
+            textView.textColor = UIColor.lightGray
+            textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
+        }else if textView.textColor == UIColor.lightGray && !text.isEmpty {
+            textView.textColor = UIColor.black
+            textView.text = text
+        }else {
+            return true
+        }
+        return false
+    }
+    
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        if self.view.window != nil {
+            if textView.textColor == UIColor.lightGray {
+                textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
+            }
+        }
+    }
+    
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView == msgView {
             txtView.layer.borderColor = #colorLiteral(red: 0.06241328269, green: 0.1183073893, blue: 0.1983669996, alpha: 1)
@@ -120,5 +157,4 @@ extension ContactUsVC : UITextFieldDelegate, UITextViewDelegate{
         }
        
     }
-    
 }

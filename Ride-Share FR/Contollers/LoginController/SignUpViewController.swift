@@ -45,8 +45,7 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         load()
-      //  SignUp()
-        
+    
         btnShowPassword.isSelected = true
         txtPassword.isSecureTextEntry = true
         btnShowConfirmPassword.isSelected = true
@@ -82,7 +81,6 @@ class SignUpViewController: UIViewController {
         dicParam["password"] = txtConfirmPassword.text!
         dicParam["country_code"] = self.countryCodeSign//txtCountryCode.text!
         dicParam["mobile_number"] = txtNumber.text!
-
         dicParam["serviceArea"] = (gmsAddress?.lines?.joined(separator: "/n"))
         dicParam["latitude"] = self.lat
         dicParam["longitude"] = self.long
@@ -106,14 +104,10 @@ class SignUpViewController: UIViewController {
                 self.navigationController?.pushViewController(controller, animated: true)
             }
 
-    
         }, failure: {errorMsg in
             self.showOkAlert(errorMsg)
         })
-        
-       
     }
-    
 
     
     @IBAction func btnActionServiceArea(_ sender: UIButton) {

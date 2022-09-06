@@ -56,7 +56,6 @@ class ForgetPasswordVC: UIViewController {
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "OtpVerificationVC") as! OtpVerificationVC
                 vc.type = "forget"
                 vc.isOTPForgot = true
-              //  vc.email = self.strEmail
                 vc.mobileNumber = self.txtNumber.text!//self.strMobile
                 vc.strCountryCode = self.countryCodeSign
                 vc.email = dataObj["email"] as! String

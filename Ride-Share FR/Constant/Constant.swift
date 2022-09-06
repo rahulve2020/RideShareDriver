@@ -10,7 +10,6 @@ import UIKit
 let KScreenSize = UIScreen.main.bounds.size
 @available(iOS 13.0, *)
 let KAppDelegate = (UIApplication.shared.delegate as! AppDelegate)
-
 //MARK: Constant String
 struct KString {
     static let strAppHeader              = "Safe Ride !!"
@@ -48,6 +47,7 @@ struct KAlertMsg {
 struct  stripePublishableKey {
     static let publishKey = "pk_live_HCDXsOAEmsRJMJkM1ZMnTi6H"
         //"pk_test_T0oksOcX7GaY7ARtdUbdSUrP"
+    static let secrateKey = "pk_test_51LLSogIOt5rPaif469zF7DrYgNXbNQoc5061pXYp4v9QZgPM2WzCJEMiQLNbEOMlASRvuDL3bLFPwwdB9WXYYDbU00i8jSSuR4"
 
     
 }

@@ -25,6 +25,7 @@ target 'Ride-Share FR' do
     pod 'FSCalendar'
     pod 'Firebase/Core'
     pod 'Firebase/Messaging'
+    pod 'Stripe', '~> 15.0.1'
     
 
   target 'Ride-Share FRTests' do
