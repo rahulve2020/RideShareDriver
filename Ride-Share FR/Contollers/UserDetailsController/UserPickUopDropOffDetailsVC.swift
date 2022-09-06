@@ -37,7 +37,8 @@ class UserPickUopDropOffDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector:#selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         userImg.setImg()
         getPickUpAddressFromLatLon()
         getDropUpAddressFromLatLon()
@@ -54,14 +55,9 @@ class UserPickUopDropOffDetailsVC: UIViewController {
     if let myLocation = currentLocation {
     setMapWith(thisCoordinate: myLocation.coordinate)
         }
-          
-        // Do any additional setup after loading the view.
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        print("show view")
     }
 
-    override func viewDidLayoutSubviews() {
+    @objc func appMovedToForeground() {
         if DSUserPrefrence.UserPickUp == true {
             DSUserPrefrence.UserPickUp = false
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "UserOtpVerificationVC") as! UserOtpVerificationVC
@@ -75,8 +71,8 @@ class UserPickUopDropOffDetailsVC: UIViewController {
 //
 //        self.navigationController?.pushViewController(vc, animated: true)
         }
-
-    }
+      }
+    
     func getPickUpAddressFromLatLon() {                                             // abhishek
             var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
         let lat: Double = objResponse?.pickuplocation?.pickup_latitude ?? 0.0

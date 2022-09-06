@@ -70,7 +70,8 @@ class DashboardViewController: SidePanelBaseViewController, PopupDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector:#selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         offlineView.isHidden = false
         vV.shadow()
         print(objResponse?.dropLocation?.drop_latitude)
@@ -106,12 +107,7 @@ class DashboardViewController: SidePanelBaseViewController, PopupDelegate {
  
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-      //  self.trackBtn.isHidden = false
-        print("i am in view will apper")
-    }
-    
-    override func viewDidLayoutSubviews() {
+    @objc func appMovedToForeground() {
         if DSUserPrefrence.endTrip == true {
             DSUserPrefrence.endTrip = false
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "EndTripDriverVC") as! EndTripDriverVC
@@ -120,27 +116,28 @@ class DashboardViewController: SidePanelBaseViewController, PopupDelegate {
             vc.dropLong = pickLongitude
             vc.objResponse = objResponse
         self.navigationController?.pushViewController(vc, animated: true)
-        print("i am in layout sbview")
         } else {
 //        let vc = self.storyboard?.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
 //
 //        self.navigationController?.pushViewController(vc, animated: true)
         }
-
     }
     
     @IBAction func navigationBtn(_ sender: Any) {
         let saddr = "\(locationStart.coordinate.latitude),\(locationStart.coordinate.longitude)"
-         DSUserPrefrence.endTrip = true
+        DSUserPrefrence.endTrip = true
         startOrder()
-   //     self.openMapForPlace(strLatFrom: latDrop ?? 0.00, strlongFrom: longDrop ?? 0.00)
         if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
-            UIApplication.shared.openURL(URL(string:"comgooglemaps://?saddr=\(saddr)&daddr=\(self.latDrop ?? 0.0),\(self.longDrop ?? 0.0)&directionsmode=driving&zoom=14&views=traffic")!)
+            if let url = URL(string: "comgooglemaps-x-callback://?saddr=&daddr=\(saddr)&daddr=\(self.latDrop ?? 0.0),\(self.longDrop ?? 0.0)&directionsmode=driving") {
+                UIApplication.shared.open(url, options: [:])
+            }
         } else {
-        print("Can't use comgooglemaps://");
+            if let urlDestination = URL.init(string: "https://www.google.co.in/maps/dir/?saddr=&daddr=\(self.latDrop ?? 0.0),\(self.longDrop ?? 0.0)&directionsmode=driving") {
+                UIApplication.shared.open(urlDestination)
+            }
         }
-        
     }
+    
     @IBAction func trackBtn(_ sender: Any) {
         startOrder()
         
