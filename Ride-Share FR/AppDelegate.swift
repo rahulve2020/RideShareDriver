@@ -12,6 +12,8 @@ import GooglePlaces
 import Firebase
 import FirebaseMessaging
 import UserNotifications
+import Stripe
+
 
 @available(iOS 13.0, *)
 
@@ -25,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared().isEnabled = true
-        
+        STPAPIClient.shared().publishableKey = stripePublishableKey.secrateKey
        // window?.overrideUserInterfaceStyle = .light
         Messaging.messaging().isAutoInitEnabled = true
     

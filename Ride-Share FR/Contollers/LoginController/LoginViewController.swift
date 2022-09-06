@@ -44,8 +44,8 @@ class LoginViewController: UIViewController {
 
                dicParam["device_type"] = "ios"
                print("dicParamdicParamdicParam:-\(dicParam)")
-        AppServices.shared.login(param: dicParam, success: { [self]  (data) in
-            print("datadata-\(data)")
+               AppServices.shared.login(param: dicParam, success: { [self]  (data) in
+               print("datadata-\(data)")
             
             
             let dictdata = data as! [String : Any]
@@ -118,10 +118,8 @@ class LoginViewController: UIViewController {
     
     @IBAction func createAccountBtn(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-       
         self.navigationController?.pushViewController(vc, animated: true)
-        
-        
+    
     }
 }
 

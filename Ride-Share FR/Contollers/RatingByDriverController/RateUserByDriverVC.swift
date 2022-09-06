@@ -18,10 +18,17 @@ class RateUserByDriverVC: UIViewController {
     @IBOutlet weak var txtCommentView: UITextView!
     
     var ratedId : String?
+    var placeholder: String?
     //MARK:- Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        txtCommentView.delegate = self
+        placeholder = "Additional Comments...."
+        txtCommentView.text = placeholder
+        txtCommentView.textColor = UIColor.lightGray
+        txtCommentView.selectedTextRange = txtCommentView.textRange(from: txtCommentView.beginningOfDocument, to: txtCommentView.beginningOfDocument)
+        lblDriverName.set(text: "4.5", leftIcon: nil, rightIcon: UIImage(named: "star_on_ic"))
     }
     
     
@@ -57,3 +64,29 @@ class RateUserByDriverVC: UIViewController {
     }
 }
 
+@available(iOS 13.0, *)
+extension RateUserByDriverVC : UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let currentText:String = textView.text
+        let updatedText = (currentText as NSString).replacingCharacters(in: range, with: text)
+        if updatedText.isEmpty {
+            textView.text = placeholder
+            textView.textColor = UIColor.lightGray
+            textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
+        }else if textView.textColor == UIColor.lightGray && !text.isEmpty {
+            textView.textColor = UIColor.black
+            textView.text = text
+        }else {
+            return true
+        }
+        return false
+    }
+    
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        if self.view.window != nil {
+            if textView.textColor == UIColor.lightGray {
+                textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
+            }
+        }
+    }
+}
