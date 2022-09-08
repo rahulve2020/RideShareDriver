@@ -67,6 +67,8 @@ class DashboardViewController: SidePanelBaseViewController, PopupDelegate {
     
     var latDrop : Double?
     var longDrop : Double?
+    var pickLat : Double?
+    var pickLong : Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,7 +116,8 @@ class DashboardViewController: SidePanelBaseViewController, PopupDelegate {
             vc.orderId = orderId
             vc.dropLat = pickLatitude
             vc.dropLong = pickLongitude
-            vc.objResponse = objResponse
+            vc.pickLat = pickLat //objResponse?.pickuplocation?.pickup_latitude
+            vc.pickLong = pickLong //objResponse?.pickuplocation?.pickup_longitude
         self.navigationController?.pushViewController(vc, animated: true)
         } else {
 //        let vc = self.storyboard?.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
@@ -335,6 +338,8 @@ class DashboardViewController: SidePanelBaseViewController, PopupDelegate {
             let objDriver = Response.objUserCredentials(fromDict: jsonData)
            // print(objDriver?.dropLocation?.drop_latitude)
             self.orderId = objDriver?.orderId
+            self.pickLat = objDriver?.pickuplocation?.pickup_latitude
+            self.pickLong = objDriver?.pickuplocation?.pickup_longitude
             if objDriver?.notification_type == "new_order" {
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "UserDetailsVC") as! UserDetailsVC
             

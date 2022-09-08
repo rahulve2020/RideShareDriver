@@ -56,7 +56,7 @@ class Apphelper: NSObject {
             static let getRatingList : String = API.BaseUrl + "driver/get-my-rating"
             static let getDriverPostRating : String = API.BaseUrl + "driver/post-rating"
             static let addBankDetails : String = API.BaseUrl + "driver/add-bank-details"
-            
+            static let deleteAccount : String = API.BaseUrl + "driver/delete-driver"
             static let sharePost : String = API.BaseUrl + "sharePost"                  // abhishek
             
            

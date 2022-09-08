@@ -23,6 +23,8 @@ class TotalFareDetailsVC: UIViewController {
     var orderId : String?
     var dropLat : Double?
     var dropLong : Double?
+    var pickLat : Double?
+    var pickLong : Double?
     
     var objResponse : Response?
     
@@ -39,14 +41,12 @@ class TotalFareDetailsVC: UIViewController {
     }
     func getPickUpAddressFromLatLon() {                                             // abhishek
             var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
-        let lat: Double = objResponse?.pickuplocation?.pickup_latitude ?? 0.0
+       // let lat: Double = objResponse?.pickuplocation?.pickup_latitude ?? 0.0
             //21.228124
-            let lon: Double = objResponse?.pickuplocation?.pickup_longitude ?? 0.0
+         //   let lon: Double = objResponse?.pickuplocation?.pickup_longitude ?? 0.0
             //72.833770
-        
-       // self.pickLat = objResponse?.pickuplocation?.pickup_latitude ?? 0.0
-      //  self.pickLong = objResponse?.pickuplocation?.pickup_longitude ?? 0.0
-        
+        let lat: Double = self.pickLat ?? 0.0
+        let lon: Double = self.pickLong ?? 0.0
             let ceo: CLGeocoder = CLGeocoder()
             center.latitude = lat
             center.longitude = lon

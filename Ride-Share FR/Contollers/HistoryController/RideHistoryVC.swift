@@ -60,10 +60,11 @@ class RideHistoryVC: SidePanelBaseViewController, FSCalendarDataSource, FSCalend
     //    self.calenderView.appearance.eventDefaultColor    = Colors.NavTitleColor
         self.calenderView.appearance.selectionColor       = .systemGreen
        // self.calenderView.appearance.titleSelectionColor  = .na
-        self.calenderView.appearance.todayColor           = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
-        self.calenderView.appearance.todaySelectionColor  = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+        self.calenderView.appearance.todayColor           = #colorLiteral(red: 0.2263403237, green: 0.3409570456, blue: 0.6275832057, alpha: 1)
+        self.calenderView.appearance.todaySelectionColor  = #colorLiteral(red: 0.2263403237, green: 0.3409570456, blue: 0.6275832057, alpha: 1)
         self.calenderView.allowsMultipleSelection = false
-      
+      //  self.calenderView.appearance.weekdayFont = CGRect(20)
+        self.calenderView.appearance.weekdayFont = UIFont(name: "SFProDisplay-Bold", size: 20)
         self.calenderView.scope = .week
         
         // For UITest

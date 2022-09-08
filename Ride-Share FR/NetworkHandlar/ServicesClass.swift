@@ -63,7 +63,41 @@ class ServicesClass_New : NSObject
    }
     
     
-    
+    //abhishek
+    static func getDeleteFromURlWith(url:String,parameters:Dictionary<String, Any>?,completionBlock : @escaping CompletionBlock) {
+       
+        print("API URL-----> ", url)
+     
+        
+        let header: HTTPHeaders =  ["Authorization" : Facade.shared.authToken ?? "","Content-Type": "application/json"]
+      //  let header: HTTPHeaders =  ["Authorization" : DSUserPrefrence.Token ?? "","Content-Type": "application/json"]
+         print("HEADER:::::*******  \(Facade.shared.authToken ?? "")")
+     
+     
+        AF.request(url, method: .delete, parameters: parameters, encoding: URLEncoding.default, headers: header).responseJSON { (response) in
+            print("response----->",response)
+            switch(response.result) {
+             
+            case .success(_):
+                if let data = response.value   {
+                    var dic : Dictionary<String,Any> = Dictionary()
+                    
+                    if data as? Array<Dictionary<String,Any>> != nil   {
+                        dic["data"] = data as? Array<Dictionary<String,Any>>
+                        completionBlock(dic,nil)
+                    }  else  {
+                        completionBlock(data as? Dictionary<String,Any>,nil)
+                    }
+                }
+                break
+            case .failure(_):
+             print(response.error)
+                completionBlock(nil ,response.error!)
+                break
+            }
+        }
+        
+    }
     
     
     

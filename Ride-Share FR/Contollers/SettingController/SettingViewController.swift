@@ -20,22 +20,54 @@ class SettingViewController: SidePanelBaseViewController {
     }
 
     
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func deleteAccountDriver() -> Void {
+        
+    AppServices.shared.getDeleteAccount(success: { (data) in
+            print("getFaqDataFromServer\(data!)")
+
+        let datDict = data as? [String : Any]
+        Facade.shared.isLogin = false
+        DSUserPrefrence.FullName = ""
+        DSUserPrefrence.profilePicture = ""
+        DSUserPrefrence.email_address = ""
+        DSUserPrefrence.user_ID = ""
+        DSUserPrefrence.device_id = ""
+        DSUserPrefrence.country_code = ""
+        DSUserPrefrence.mobile_number = ""
+        DSUserPrefrence.userType = ""
+        DSUserPrefrence.Token = ""
+        DSUserPrefrence.driver_employee_id = ""
+        DSUserPrefrence.latitude = 0.0
+        DSUserPrefrence.longitude = 0.0
+        DSUserPrefrence.company_name = ""
+        DSUserPrefrence.model_of_vehicle = ""
+        DSUserPrefrence.vehicle_color = ""
+        DSUserPrefrence.plate_number = ""
+        DSUserPrefrence.serviceArea = ""
+        
+        let story = UIStoryboard(name: "Main", bundle:nil)
+        let vc = story.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        let navigationController = UINavigationController(rootViewController: vc)
+        navigationController.navigationBar.isHidden = true
+        UIApplication.shared.windows.first?.rootViewController = navigationController
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
+    }, failure: {errorMsg in
+        self.showOkAlert(errorMsg)
+    })
+        
     }
-    */
+    
+    
+    
+    
     @IBAction func menuBtnTapped(_ sender: Any) {
        
           
           let viewMenu = MenuView.fromNib(xibName: "MenuView") as! MenuView
           viewMenu.frame = self.view.frame
           viewMenu.showMenu()
-          viewMenu.delegate = self
+     //     viewMenu.delegate = self
          // viewMenu.newDelegate = self
           self.view.addSubview(viewMenu)
       }
@@ -55,64 +87,19 @@ class SettingViewController: SidePanelBaseViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "UpdateDocumentVC") as! UpdateDocumentVC
        self.navigationController?.pushViewController(vc, animated: true)
     }
-}
-@available(iOS 13.0, *)
-extension SettingViewController: MoveToPreviousViewDelegate {
-    func getTapOnHeaderClick() {
-        print("")
+    @IBAction func deleteAccountBtn(_ sender: Any) {
+        var refreshAlert = UIAlertController(title: "Account Detele", message: "Are you sure want to delete your account permanently?.", preferredStyle: UIAlertController.Style.alert)
+
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            self.deleteAccountDriver()
+          print("Handle Ok logic here")
+          }))
+
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+          print("Handle Cancel Logic here")
+          }))
+
+        present(refreshAlert, animated: true, completion: nil)
     }
-    
-    func moveToPreviousView(selected: Int) {
-        if selected == 0 {
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
-           self.navigationController?.pushViewController(vc, animated: true)
-           
-    //            let appointment = self.storyboard?.instantiateViewController(withIdentifier: "HomeContainerVC")
-    //            self.navigationController?.pushViewController(appointment!, animated: true)
-        }
-        if selected == 1 {
-         //   let activityVC = UIActivityViewController(activityItems: ["www.google.com"], applicationActivities: nil)
-         //   activityVC.popoverPresentationController?.sourceView = self.view
-        //    self.present(activityVC, animated: true, completion: nil)
-        }
-        if selected == 2 {
-        //    let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyBookingVC") as! //MyBookingVC
-         //   self.navigationController?.pushViewController(vc, animated: true)
-        }
-        if selected == 3{
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingViewController") as! SettingViewController
-           self.navigationController?.pushViewController(vc, animated: true)
-        }
-        if selected == 4 {
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "NotificationVC") as! NotificationVC
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        if selected == 5{
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChangePasswordVC") as! ChangePasswordVC
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        if selected == 6{
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "RatingVC") as! RatingVC
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        if selected == 7{
-            
-        }
-        if selected == 8{
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ContactUsVC") as! ContactUsVC
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        if selected == 9{
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsVC") as! AboutUsVC
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        if selected == 10{
-        //    let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-          //  self.navigationController?.pushViewController(vc, animated: true)
-        }
-        if selected == 11{
-        //    let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-          //  self.navigationController?.pushViewController(vc, animated: true)
-        }
     }
-}
+

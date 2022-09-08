@@ -8,6 +8,7 @@
 import UIKit
 import Stripe
 import Alamofire
+//import StripeCore
 
 //protocol CardListDelegate: class {
 //
@@ -78,6 +79,7 @@ class WalletViewController: SidePanelBaseViewController {
       // self.navigationController?.pushViewController(vc, animated: true)
         
     }
+    
 }
 
 @available(iOS 13.0, *)

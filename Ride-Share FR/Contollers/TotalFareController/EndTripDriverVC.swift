@@ -15,6 +15,8 @@ class EndTripDriverVC: UIViewController {
     var orderId : String?
     var dropLat : Double?
     var dropLong : Double?
+    var pickLat : Double?
+    var pickLong : Double?
     
     var objResponse : Response?
     
@@ -44,7 +46,9 @@ class EndTripDriverVC: UIViewController {
         vc.orderId = orderId
         vc.dropLat = dropLat
         vc.dropLong = dropLong
-        vc.objResponse = objResponse
+       // vc.objResponse = objResponse
+        vc.pickLat = pickLat
+        vc.pickLong = pickLong
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

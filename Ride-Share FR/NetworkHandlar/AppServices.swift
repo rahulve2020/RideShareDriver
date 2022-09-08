@@ -849,6 +849,35 @@ func resetPassword(param : Dictionary<String,Any>, success : @escaping successBl
 
     }
     
+    //abhishek
+    func getDeleteAccount( success : @escaping successBlock, failure : @escaping failureBlock)  {
+        ActivityIndicator.show()
+
+        ServicesClass_New.getDeleteFromURlWith(url: Apphelper.Constants.API.deleteAccount, parameters: nil) { (json, error) in
+
+            ActivityIndicator.hide()
+
+            if error == nil
+            {
+                if self.isSuccess(info: json ?? Dictionary())
+                {
+                    success(json)
+                    return
+                }else if let strMsg = json?["message"] as? String{
+                    failure(strMsg)
+                    return
+                }
+            }
+            else if error!.localizedDescription.contains("JSON could not be serialized"){
+                failure("Problem in connecting to Server. Please try again!")
+            }else{
+                failure(error != nil ? error!.localizedDescription : Apphelper.Constants.FailureMessage.otpVerify)
+            }
+
+        }
+
+    }
+    
     func oderCompleteByDriver(param : Dictionary<String,Any>, success : @escaping successBlock, failure : @escaping failureBlock)  {
         ActivityIndicator.show()
         ServicesClass_New.postDataFromURL(url: Apphelper.Constants.API.getOrderComplete , parameters: param, requestName: "") { (json, error) in
