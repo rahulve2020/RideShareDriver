@@ -237,7 +237,33 @@ struct DSUserPrefrence {
             return UserDefaults.standard.value(forKey: "longitude") as? Double ?? 0.00
         }
     }
-    
+    static var account_holder_name  : String  {
+        set {
+            UserDefaults.standard.set(newValue, forKey: "account_holder_name")
+            UserDefaults.standard.synchronize()
+        }
+        get {
+            return UserDefaults.standard.value(forKey: "account_holder_name") as? String ?? ""
+        }
+    }
+    static var last4  : String  {
+        set {
+            UserDefaults.standard.set(newValue, forKey: "last4")
+            UserDefaults.standard.synchronize()
+        }
+        get {
+            return UserDefaults.standard.value(forKey: "last4") as? String ?? ""
+        }
+    }
+    static var routing_number  : String  {
+        set {
+            UserDefaults.standard.set(newValue, forKey: "routing_number")
+            UserDefaults.standard.synchronize()
+        }
+        get {
+            return UserDefaults.standard.value(forKey: "routing_number") as? String ?? ""
+        }
+    }
     
     static var Token  : String  {
         set {

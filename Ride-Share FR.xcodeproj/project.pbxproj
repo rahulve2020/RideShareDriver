@@ -42,6 +42,7 @@
 		7D67A6F62862F9E700456803 /* TrackingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D67A6F52862F9E700456803 /* TrackingVC.swift */; };
 		7D67A6F82862F9F600456803 /* EarnMoneyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D67A6F72862F9F600456803 /* EarnMoneyVC.swift */; };
 		7D67A6FB28633A9400456803 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D67A6FA28633A9300456803 /* LoginViewController.swift */; };
+		7D77754E28CF4BB1007F416D /* BankDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D77754D28CF4BB1007F416D /* BankDetails.swift */; };
 		7D7FC1AA28C5E277007E2562 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D7FC1A728C5E277007E2562 /* Roboto-Medium.ttf */; };
 		7D7FC1AB28C5E277007E2562 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D7FC1A828C5E277007E2562 /* Roboto-Regular.ttf */; };
 		7D7FC1AC28C5E277007E2562 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D7FC1A928C5E277007E2562 /* Roboto-Bold.ttf */; };
@@ -165,6 +166,7 @@
 		7D67A6F52862F9E700456803 /* TrackingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingVC.swift; sourceTree = "<group>"; };
 		7D67A6F72862F9F600456803 /* EarnMoneyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarnMoneyVC.swift; sourceTree = "<group>"; };
 		7D67A6FA28633A9300456803 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7D77754D28CF4BB1007F416D /* BankDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankDetails.swift; sourceTree = "<group>"; };
 		7D7FC1A728C5E277007E2562 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		7D7FC1A828C5E277007E2562 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		7D7FC1A928C5E277007E2562 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 				7DDC9E8128BCD8330001A08C /* TotalFareDetails.swift */,
 				7DE2830A28BF5E6E00B8B55A /* TotalEarnDriverModel.swift */,
 				7D7FC1AD28C5E2D2007E2562 /* DriveRatingModel.swift */,
+				7D77754D28CF4BB1007F416D /* BankDetails.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1020,6 +1023,7 @@
 				7DC8A3C328B8C88100DCBEA3 /* StartRideModel.swift in Sources */,
 				7D11EBD428B6518B00AB8B3B /* CarAnimator.swift in Sources */,
 				7DBD9F6C2869962300AE1655 /* MenuView.swift in Sources */,
+				7D77754E28CF4BB1007F416D /* BankDetails.swift in Sources */,
 				7DB625562886FE10006AD196 /* ProfileModel.swift in Sources */,
 				48BCFE0128C20ED30055CB93 /* RateUserByDriverVC.swift in Sources */,
 				7DDF27652886AE130055E29D /* VehicleCategoryModel.swift in Sources */,

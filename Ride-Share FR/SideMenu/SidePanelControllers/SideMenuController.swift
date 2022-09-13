@@ -25,7 +25,7 @@ class SideMenuController: UIViewController {
     
     var identifier : String?
     var arrSideMenu = ["Home","Wallet","History","Setting","Notification","Change Password","Rating","Share","Contact Us","Delete Account","About Us"]
-    var arrImage : [UIImage?] = [ UIImage(named: "home_ic"),UIImage(named: "wallet_ic"),UIImage(named: "history_ic"),UIImage(named: "settings_ic"),UIImage(named: "notification_ic"),UIImage(named: "change_password_ic"),UIImage(named: "rating_ic"),UIImage(named: "share_ic"),UIImage(named: "contact_us_ic"),UIImage(named: "contact_us_ic"),UIImage(named: "about_us_ic")]
+    var arrImage : [UIImage?] = [ UIImage(named: "home_ic"),UIImage(named: "wallet_ic"),UIImage(named: "history_ic"),UIImage(named: "settings_ic"),UIImage(named: "notification_ic"),UIImage(named: "change_password_ic"),UIImage(named: "rating_ic"),UIImage(named: "share_ic"),UIImage(named: "contact_us_ic"),UIImage(named: "about_us_ic")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -247,21 +247,7 @@ extension SideMenuController : UITableViewDelegate, UITableViewDataSource{
         case 8:
             identifier = "ContactUsVC"
             break
-        case 9:
-            identifier = ""
-            var refreshAlert = UIAlertController(title: "Account", message: "Do you want delete this account.", preferredStyle: UIAlertController.Style.alert)
-
-            refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-              print("Handle Ok logic here")
-              }))
-
-            refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-              print("Handle Cancel Logic here")
-              }))
-
-            present(refreshAlert, animated: true, completion: nil)
-            break
-        
+       
         default:
             identifier = "AboutUsVC"
             break

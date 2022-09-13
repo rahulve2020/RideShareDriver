@@ -6882,6 +6882,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lblAccountHolderName" destination="Elq-1Y-sbL" id="9bM-Bk-c2b"/>
+                        <outlet property="lblAccountNumber" destination="f72-IK-Mcp" id="9Is-jm-N2k"/>
+                        <outlet property="lblRoutingNumber" destination="xDm-4T-iFn" id="3GB-P9-wax"/>
                         <outlet property="vV" destination="1Dk-KM-cwn" id="jVS-Lr-m1y"/>
                     </connections>
                 </viewController>

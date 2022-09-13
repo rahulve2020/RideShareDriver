@@ -30,22 +30,36 @@ class AccountDetailsVC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
+    func addBAnkDetails() -> Void {
+        var dicParam : Dictionary<String,Any> = Dictionary()
+  
+       
+        dicParam["account_holder_name"] = self.txtName.text
+        dicParam["routing_number"] = self.txtRoutingNo.text
+        dicParam["account_number"] = self.txtAccountNo.text
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        AppServices.shared.getAddBankDetails(param: dicParam, success: { [self] (data) in
+
+            debugPrint("changePassword:-\(data!)")
+            let dictdata = data as! [String : Any]
+            let dataObj = dictdata["data"] as! [String : Any]
+            DSUserPrefrence.Token = dataObj["token"] as? String ?? ""
+            self.navigationController?.popViewController(animated: true)
+           // let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+           // self.navigationController?.pushViewController(vc, animated: true)
+            
+        }, failure: {errorMsg in
+            self.showOkAlert(errorMsg)
+        })
     }
-    */
-
+    
+    
+    
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func addaccountBtn(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+        addBAnkDetails()
     }
 }
 @available(iOS 13.0, *)

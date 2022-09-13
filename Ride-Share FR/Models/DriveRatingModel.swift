@@ -19,7 +19,7 @@ class DriverRatingModel: NSObject {
         self._id = data["_id"] as? String ?? ""
         self.rating = data["rating"] as? Int ?? 0
         self.comment = data["comment"] as? String ?? ""
-        self.comment = data["createdAt"] as? String ?? ""
+        self.createdAt = data["createdAt"] as? String ?? ""
         self.ratedUser_name = data["ratedUser_name"] as? String ?? ""
         self.ratedUser_profile_pic = data["ratedUser_profile_pic"] as? String ?? ""
     }
