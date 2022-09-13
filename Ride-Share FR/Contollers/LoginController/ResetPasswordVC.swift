@@ -76,12 +76,12 @@ class ResetPasswordVC: UIViewController {
     
     @IBAction func btnShowConfirmPasswordTapped(_ sender: Any) {
         showConfirmPasswordBtn.isSelected = !showConfirmPasswordBtn.isSelected
-        if showConfirmPasswordBtn.isSelected {
-            txtConfirmPassword.isSecureTextEntry = true
-            showConfirmPasswordBtn.setImage(#imageLiteral(resourceName: "eye_off_ic"), for: .normal)
-        }else{
-            txtConfirmPassword.isSecureTextEntry = false
-            showConfirmPasswordBtn.setImage(#imageLiteral(resourceName: "eye_on_ic"), for: .normal)
+             if showConfirmPasswordBtn.isSelected {
+                 txtConfirmPassword.isSecureTextEntry = true
+                 showConfirmPasswordBtn.setImage(#imageLiteral(resourceName: "eye_off_ic"), for: .normal)
+             }else{
+                 txtConfirmPassword.isSecureTextEntry = false
+                 showConfirmPasswordBtn.setImage(#imageLiteral(resourceName: "eye_on_ic"), for: .normal)
         }
     }
     

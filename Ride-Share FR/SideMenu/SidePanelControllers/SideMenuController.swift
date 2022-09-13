@@ -24,7 +24,7 @@ class SideMenuController: UIViewController {
     
     
     var identifier : String?
-    var arrSideMenu = ["Home","Wallet","History","Setting","Notification","Change Password","Rating","Share","Contact Us","Delete Account","About Us"]
+    var arrSideMenu = ["Home","Wallet","History","Setting","Notification","Change Password","Rating","Share","Contact Us","About Us"]
     var arrImage : [UIImage?] = [ UIImage(named: "home_ic"),UIImage(named: "wallet_ic"),UIImage(named: "history_ic"),UIImage(named: "settings_ic"),UIImage(named: "notification_ic"),UIImage(named: "change_password_ic"),UIImage(named: "rating_ic"),UIImage(named: "share_ic"),UIImage(named: "contact_us_ic"),UIImage(named: "about_us_ic")]
 
     override func viewDidLoad() {

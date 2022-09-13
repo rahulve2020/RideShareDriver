@@ -140,23 +140,23 @@ class VehicleDocumentVC: UIViewController, UIImagePickerControllerDelegate, UINa
             isProfilePicUpload = true
             if selectedButton == 0 {
                 self.licenceImg.image = image
-                self.statusLicenseLbl2.isHidden = false
-                self.statusLicenceLbl1.isHidden = true
+                //self.statusLicenseLbl2.isHidden = false
+               // self.statusLicenceLbl1.isHidden = true
                 
             } else if selectedButton == 1 {
                 self.insuranceImg.image = image
-                self.statusInsuranceLbl2.isHidden = false
-                self.statusInsuranceLbl1.isHidden = true
+               // self.statusInsuranceLbl2.isHidden = false
+               // self.statusInsuranceLbl1.isHidden = true
                 
             } else if selectedButton == 2 {
                 self.credentailsImg.image = image
-                self.statusCredentaislLbl2.isHidden = false
-                self.statusCredentaislLbl1.isHidden = true
+               // self.statusCredentaislLbl2.isHidden = false
+               // self.statusCredentaislLbl1.isHidden = true
                 
             } else if selectedButton == 3 {
                 self.qualificationImg.image = image
-                self.statusQualificationLbl2.isHidden = false
-                self.statusQualificationLbl1.isHidden = true
+               // self.statusQualificationLbl2.isHidden = false
+               // self.statusQualificationLbl1.isHidden = true
             }
            // self.licenceImg.image = image
             

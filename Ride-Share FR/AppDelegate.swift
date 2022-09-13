@@ -70,6 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         
         application.registerForRemoteNotifications()
         
+        
         if Facade.shared.isLogin == true {
             
             let story = UIStoryboard(name: "Main", bundle:nil)

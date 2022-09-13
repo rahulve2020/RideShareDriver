@@ -9,9 +9,10 @@ import UIKit
 import CoreLocation
 import GoogleMaps
 import GooglePlaces
+import MessageUI
 
 @available(iOS 13.0, *)
-class UserPickUopDropOffDetailsVC: UIViewController {
+class UserPickUopDropOffDetailsVC: UIViewController ,MFMessageComposeViewControllerDelegate{
     @IBOutlet weak var userLocationLbl: UILabel!
     
     @IBOutlet weak var pickupLbl: UILabel!
@@ -213,13 +214,26 @@ class UserPickUopDropOffDetailsVC: UIViewController {
     }
     
     @IBAction func callingBtn(_ sender: Any) {
-        let phNUmber = objResponse?.userInfo?.mobile_number ?? "0000"
-      //  let phNUmber =   "\(objResponse?.driverInfo?.country_code ?? "") - \(objResponse?.driverInfo?.mobile_number)"
+      //  let phNUmber = objResponse?.userInfo?.mobile_number ?? "0000"
+        let phNUmber =   "\(objResponse?.userInfo?.country_code ?? "") - \(objResponse?.userInfo?.mobile_number ?? "0000")"
        callNumber(phoneNumber: phNUmber)
     }
+    
     @IBAction func msgBtn(_ sender: Any) {
-        
+        if (MFMessageComposeViewController.canSendText()) {
+        let controller = MFMessageComposeViewController()
+        controller.body = ""
+        controller.recipients = [objResponse?.userInfo?.mobile_number ?? ""]
+        controller.messageComposeDelegate = self
+        self.present(controller, animated: true, completion: nil)
+        }
     }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController!, didFinishWith result: MessageComposeResult) {
+           //... handle sms screen actions
+        self.dismiss(animated: true, completion: nil)
+       }
+    
     @IBAction func pickUpLocationBtn(_ sender: Any) {
         DSUserPrefrence.UserPickUp = true
         let saddr = "\(locationStart.coordinate.latitude),\(locationStart.coordinate.longitude)"
@@ -306,3 +320,24 @@ extension UserPickUopDropOffDetailsVC: CLLocationManagerDelegate {
 //
 //    }
 //}
+//@available(iOS 13.0, *)
+//extension UserPickUopDropOffDetailsVC: MFMessageComposeViewControllerDelegate{
+//    func messageComposeViewController(_ controller: MFMessageComposeViewController!,
+//            didFinishWith result: MessageComposeResult) {
+//            switch (result) {
+//                case .cancelled:
+//                    print("Message was cancelled")
+//                    dismiss(animated: true, completion: nil)
+//                case .failed:
+//                    print("Message failed")
+//                    dismiss(animated: true, completion: nil)
+//                case .sent:
+//                    print("Message was sent")
+//                    dismiss(animated: true, completion: nil)
+//                default:
+//                    break
+//            }
+//        }
+//    }
+
+

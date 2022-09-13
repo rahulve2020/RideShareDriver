@@ -73,6 +73,7 @@ class VehicleDetailsVC: UIViewController {
         subCategoryView.layer.borderWidth = 1
      
     }
+    
     func setDropDown(){
         var categoryList = [String]()
         for i in self.categoryList {
@@ -96,6 +97,7 @@ class VehicleDetailsVC: UIViewController {
         }
         dropDown.show()
     }
+    
     func setDropDown1(){
         var categorySubList = [String]()
         categorySubList.removeAll()
@@ -118,6 +120,10 @@ class VehicleDetailsVC: UIViewController {
         }
         dropDown.show()
     }
+    
+    //Mark API
+    
+    
     func getCategoryDetails() -> Void {
       
         
@@ -143,6 +149,7 @@ class VehicleDetailsVC: UIViewController {
             
         }
     }
+    
     func getSubCategoryleDetails(id: String){
         var dicParam : Dictionary<String,Any> = Dictionary()
         //let obj = categoryList[0]._id
@@ -197,7 +204,7 @@ class VehicleDetailsVC: UIViewController {
             self.showOkAlert(errorMsg)
         })
     }
-
+    // Button action
     @IBAction func categoryBtn(_ sender: Any) {
         setDropDown()
     }
@@ -216,6 +223,7 @@ class VehicleDetailsVC: UIViewController {
             
     }
 }
+
 @available(iOS 13.0, *)
 extension VehicleDetailsVC : UITextFieldDelegate{
     
