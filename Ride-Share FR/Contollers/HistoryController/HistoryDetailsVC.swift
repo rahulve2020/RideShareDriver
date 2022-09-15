@@ -1,8 +1,8 @@
 //
-//  RideHistoryViewCell.swift
+//  HistoryDetailsVC.swift
 //  Ride-Share FR
 //
-//  Created by Priya Rastogi on 04/07/22.
+//  Created by Priya Rastogi on 14/09/22.
 //
 
 import UIKit
@@ -10,38 +10,53 @@ import GoogleMaps
 import GooglePlaces
 import CoreLocation
 
-class RideHistoryViewCell: UITableViewCell {
-    @IBOutlet weak var NameLbl: UILabel!
-    @IBOutlet weak var userImg: UIImageView!
-    @IBOutlet weak var distanceLbl: UILabel!
-    @IBOutlet weak var priceLbl: UILabel!
+
+class HistoryDetailsVC: UIViewController {
+
+    @IBOutlet weak var vV: UIView!
+    @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var pickUpLbl: UILabel!
-    @IBOutlet weak var droplbl: UILabel!
-    @IBOutlet weak var decriptionLbl: UILabel!
+    @IBOutlet weak var dropOffLbl: UILabel!
+    @IBOutlet weak var amountLbl: UILabel!
+    
+    @IBOutlet weak var timeLbl: UILabel!
+    @IBOutlet weak var distanceLbl: UILabel!
+    @IBOutlet weak var userImg: UIImageView!
+    @IBOutlet weak var totalAmountLbl: UILabel!
+    @IBOutlet weak var tipLbl: UILabel!
     
     var gmsAddress: GMSAddress?
     var currentLocation : CLLocation?
     var currentLocation1: CLLocationCoordinate2D?
     var locationManager = CLLocationManager()
     var historyModel = [HistoryModel]()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        vV.shadow()
+        loadData()
+        // Do any additional setup after loading the view.
+    }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        userImg.setImg()
-        // Initialization code
-    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    func loadData() {
+        self.nameLbl.text = self.historyModel.first?.UserName
+        self.distanceLbl.text = self.historyModel.first?.total_distance
+        self.timeLbl.text = self.historyModel.first?.total_time
+        self.totalAmountLbl.text = self.historyModel.first?.total_Charge
+        self.amountLbl.text = self.historyModel.first?.total_Charge
+        getPickUpAddressFromLatLon()
+        getDropUpAddressFromLatLon()
+        if let urlImage = URL(string: historyModel.first?.UserPic ?? "") {
+            userImg.sd_setImage(with: urlImage, completed: nil)
+        }
+}
+    
     func getPickUpAddressFromLatLon(){
             var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
-        let lat: Double = info?.pickUp_location?.coordinates![1] ?? 0.0
+        let lat: Double = historyModel.first?.pickUp_location?.coordinates![1] ?? 0.0
             //21.228124
-        let lon: Double = info?.pickUp_location?.coordinates![0] ?? 0.0
+        let lon: Double = historyModel.first?.pickUp_location?.coordinates![0] ?? 0.0
             //72.833770
             let ceo: CLGeocoder = CLGeocoder()
             center.latitude = lat
@@ -93,11 +108,13 @@ class RideHistoryViewCell: UITableViewCell {
             })
         
         }
+    
+    
     func getDropUpAddressFromLatLon() {
             var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
-        let lat: Double = info?.drop_location?.coordinates![1] ?? 0.0
+        let lat: Double = historyModel.first?.drop_location?.coordinates![1] ?? 0.0
             //21.228124
-        let lon: Double = info?.drop_location?.coordinates![0] ?? 0.0
+        let lon: Double = historyModel.first?.drop_location?.coordinates![0] ?? 0.0
             //72.833770
             let ceo: CLGeocoder = CLGeocoder()
             center.latitude = lat
@@ -139,35 +156,18 @@ class RideHistoryViewCell: UITableViewCell {
                             addressString = addressString + pm.postalCode! + " "
                         }
 
-                        self.droplbl.text = addressString
+                        self.dropOffLbl.text = addressString
                         print(addressString)
                   }
             })
 
         }
     
-    var info : HistoryModel?   {
-        didSet {
-            self.NameLbl.text = self.info?.UserName
-            self.distanceLbl.text = self.info?.total_distance
-            self.priceLbl.text = self.info?.total_Charge
-            self.decriptionLbl.text = self.info?.user_medicalDetails?.medicalCondition
-            getPickUpAddressFromLatLon()
-            getDropUpAddressFromLatLon()
-            userImg.sd_setImage(with: URL.init(string: info?.UserPic ?? "")) { (image, error, cache, urls) in
-
-                if (error != nil) {
-
-                }else {
-                    self.userImg.image = image
-                }
-        }
+    
+    
+    
+    @IBAction func backBtn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
-
-
-}
-    
-    
-    
 
 }

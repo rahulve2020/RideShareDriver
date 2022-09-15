@@ -13,11 +13,11 @@ class BankDetails: NSObject {
     var last4 : String = ""
     var routing_number : String = ""
    
-    init (data: [String:Any]){
-        self.id = data["id"] as? String ?? ""
-        self.account_holder_name = data["account_holder_name"] as? String ?? ""
-        self.last4 = data["last4"] as? String ?? ""
-        self.routing_number = data["routing_number"] as? String ?? ""
+    init (driverBankDetail: [String:Any]){
+        self.id = driverBankDetail["id"] as? String ?? ""
+        self.account_holder_name = driverBankDetail["account_holder_name"] as? String ?? ""
+        self.last4 = driverBankDetail["last4"] as? String ?? ""
+        self.routing_number = driverBankDetail["routing_number"] as? String ?? ""
       
     }
 }

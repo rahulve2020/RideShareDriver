@@ -19,11 +19,16 @@ import Alamofire
 
 class WalletViewController: SidePanelBaseViewController {
 
+    @IBOutlet weak var accountView: UIView!
     @IBOutlet weak var vV: UIView!
     @IBOutlet weak var lblAccountHolderName: UILabel!
     
     @IBOutlet weak var lblRoutingNumber: UILabel!
     @IBOutlet weak var lblAccountNumber: UILabel!
+  
+    @IBOutlet weak var updateBtn: UIButton!
+    @IBOutlet weak var addAccount: UIButton!
+    @IBOutlet weak var bankImg: UIImageView!
     
     var selectedIndex: Int?
     var isCameFromProfile = false
@@ -33,71 +38,63 @@ class WalletViewController: SidePanelBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getBankDetails()
+       // getBankDetails()
         vV.shadow()
       //  setvalue()
         // Do any additional setup after loading the view.
     }
-    func setvalue(){
-        
-        self.lblAccountHolderName.text = DSUserPrefrence.account_holder_name
-        self.lblRoutingNumber.text = DSUserPrefrence.routing_number
-        self.lblAccountNumber.text = DSUserPrefrence.last4
-     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getBankDetails()
     }
-
-
     func getBankDetails() -> Void {
         
     AppServices.shared.getBankingDetails(success: { (data) in
             print("getFaqDataFromServer\(data!)")
 
-        let datDict = data as? [String : Any]
-        if datDict?["data"] is [[String : Any]] {
-        let dataArray = datDict?["data"] as? [[String : Any]]
+            let dataObj = data as! [String : Any]
+            let dataArray = dataObj["driverBankDetail"] as? [String : Any]
+            let modelObj = BankDetails.init(driverBankDetail: dataArray!)
         
-            for item in dataArray! {
-                let modelObj = BankDetails.init(data: item)
-                self.objBankDetails = modelObj
-              //self.objBankDetails = BankDetails.init(data: dataArray)
-            }
+            self.objBankDetails = modelObj
+        
+        if dataArray == nil {
+            let label = UILabel()
+            label.frame = CGRect(x: 140, y: 200, width: 200, height: 50)
+            label.text = "No data found"
+            self.lblAccountHolderName.isHidden = true
+            self.lblRoutingNumber.isHidden = true
+            self.lblAccountNumber.isHidden = true
         }
-        self.loadData()
+                   
+            self.loadData()
 
-        
-            
     }, failure: {errorMsg in
+        self.accountView.isHidden = true
+        self.addAccount.isHidden = false
+        self.updateBtn.isHidden = true
+        self.bankImg.isHidden = false
         self.showOkAlert(errorMsg)
     })
         
     }
     
     func loadData(){
+        self.lblAccountNumber.text = "xxxxxxxxxxxx" + (objBankDetails?.last4 ?? "")
         self.lblAccountHolderName.text = objBankDetails?.account_holder_name
-        self.lblAccountNumber.text = objBankDetails?.last4
         self.lblRoutingNumber.text = objBankDetails?.routing_number
     }
-//    func addNewBankDetails(cardToken: String){
-//        var dicParam : Dictionary<String,Any> = Dictionary()
-//        dicParam["tokenId"] = cardToken
-//
-//        AppServices.shared.getAddBankDetails(param: dicParam, success: { (data) in
-//           // self.getCardList()
-//        }, failure: {errorMsg in
-//            self.showOkAlert(errorMsg)
-//        })
-//    }
-    
-   
-    
+
     @IBAction func updateAccountBtn(_ sender: Any) {
-//        let addCardViewController = STPAddCardViewController()                                                //abhishek
-//        addCardViewController.delegate = self
-//        let navigationControler = UINavigationController(rootViewController: addCardViewController)
-//        self.present(navigationControler, animated: true, completion: nil)
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "AccountDetailsVC") as! AccountDetailsVC
+
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "WalletAccountDetailsVC") as! WalletAccountDetailsVC
+        vc.objBankDetails = objBankDetails
        self.navigationController?.pushViewController(vc, animated: true)
         
+    }
+    @IBAction func addAccountBtn(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "AccountDetailsVC") as! AccountDetailsVC
+       self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
@@ -119,3 +116,4 @@ class WalletViewController: SidePanelBaseViewController {
 //extension WalletViewController : STPBankAccountHolderType {
 //
 //}
+//abhishek

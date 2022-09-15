@@ -100,6 +100,7 @@
 		7DD356082875716D00C73E41 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD356072875716D00C73E41 /* Validation.swift */; };
 		7DD3560B2875754000C73E41 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD3560A2875754000C73E41 /* LocationController.swift */; };
 		7DD3560D28757B1900C73E41 /* LocationGetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD3560C28757B1800C73E41 /* LocationGetViewController.swift */; };
+		7DDA659728D1CA5A00F7AE09 /* HistoryDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDA659628D1CA5A00F7AE09 /* HistoryDetailsVC.swift */; };
 		7DDC9E7E28BCA5660001A08C /* TotalFareDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDC9E7D28BCA5660001A08C /* TotalFareDetailsVC.swift */; };
 		7DDC9E8028BCA8D80001A08C /* EndTripDriverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDC9E7F28BCA8D80001A08C /* EndTripDriverVC.swift */; };
 		7DDC9E8228BCD8330001A08C /* TotalFareDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDC9E8128BCD8330001A08C /* TotalFareDetails.swift */; };
@@ -231,6 +232,7 @@
 		7DD356072875716D00C73E41 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		7DD3560A2875754000C73E41 /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		7DD3560C28757B1800C73E41 /* LocationGetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationGetViewController.swift; sourceTree = "<group>"; };
+		7DDA659628D1CA5A00F7AE09 /* HistoryDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailsVC.swift; sourceTree = "<group>"; };
 		7DDC9E7D28BCA5660001A08C /* TotalFareDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalFareDetailsVC.swift; sourceTree = "<group>"; };
 		7DDC9E7F28BCA8D80001A08C /* EndTripDriverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndTripDriverVC.swift; sourceTree = "<group>"; };
 		7DDC9E8128BCD8330001A08C /* TotalFareDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalFareDetails.swift; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 			children = (
 				7DA01CC9287329520097A1EC /* RideHistoryVC.swift */,
 				7DA01CCB287329760097A1EC /* RideHistoryViewCell.swift */,
+				7DDA659628D1CA5A00F7AE09 /* HistoryDetailsVC.swift */,
 			);
 			path = HistoryController;
 			sourceTree = "<group>";
@@ -985,6 +988,7 @@
 				7DBC06FB28929E2E00E692F4 /* UserDetailsVC.swift in Sources */,
 				7DE2830B28BF5E6E00B8B55A /* TotalEarnDriverModel.swift in Sources */,
 				7DB5CF6528644F6200E83DE7 /* ForgetPasswordVC.swift in Sources */,
+				7DDA659728D1CA5A00F7AE09 /* HistoryDetailsVC.swift in Sources */,
 				7DF55E74286B43A7009A45EB /* UpdateVehicleVC.swift in Sources */,
 				7D1C77F0286DB52C00CD2C45 /* AboutUsVC.swift in Sources */,
 				7D1C77DC286D828700CD2C45 /* SlidingContainerSliderView.swift in Sources */,

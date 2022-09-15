@@ -214,8 +214,8 @@ class UserPickUopDropOffDetailsVC: UIViewController ,MFMessageComposeViewControl
     }
     
     @IBAction func callingBtn(_ sender: Any) {
-      //  let phNUmber = objResponse?.userInfo?.mobile_number ?? "0000"
-        let phNUmber =   "\(objResponse?.userInfo?.country_code ?? "") - \(objResponse?.userInfo?.mobile_number ?? "0000")"
+        let phNUmber = objResponse?.userInfo?.mobile_number ?? "0000"
+      //  let phNUmber =   "\(objResponse?.userInfo?.country_code ?? "") - \(objResponse?.userInfo?.mobile_number ?? "0000")"
        callNumber(phoneNumber: phNUmber)
     }
     

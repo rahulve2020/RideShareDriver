@@ -15,9 +15,14 @@ class WalletAccountDetailsVC: UIViewController {
     @IBOutlet weak var nameView: UIView!
     @IBOutlet weak var numberView: UIView!
     @IBOutlet weak var routingView: UIView!
+    
+    var objBankDetails : BankDetails?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        load()
+        self.txtRoutingNo.text  = self.objBankDetails?.routing_number
+        self.txtAccountNo.text = "xxxxxxxxxxxx" + (objBankDetails?.last4 ?? "")
+        self.txtHolderName.text = self.objBankDetails?.account_holder_name
         // Do any additional setup after loading the view.
     }
     
@@ -34,19 +39,33 @@ class WalletAccountDetailsVC: UIViewController {
        
      
     }
-    /*
-    // MARK: - Navigation
+    func upadteAccount() -> Void {
+        var dicParam : Dictionary<String,Any> = Dictionary()
+        dicParam["account_holder_name"] = self.txtHolderName.text
+        dicParam["routing_number"] = self.txtRoutingNo.text
+        dicParam["account_number"] = self.txtAccountNo.text
+        
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        AppServices.shared.getUpdateAccount(param: dicParam, success: { (data) in
+
+            debugPrint("contactDetails:-\(data!)")
+            let dataObj = data as! [String : Any]
+
+            self.showOkAlertWithHandler(dataObj["message"] as! String) {
+                self.navigationController?.popViewController(animated: true)
+            }
+
+        }, failure: {errorMsg in
+            self.showOkAlert(errorMsg)
+        })
     }
-    */
+    
+    
 
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func saveBtn(_ sender: Any) {
+        upadteAccount()
     }
 }

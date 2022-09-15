@@ -15,7 +15,7 @@ class HistoryModel : NSObject {
     var total_Charge: String?
     var UserPic: String?
     var total_distance: String?
-//    var subcategoryInfo = [SubCategory]()
+    var user_medicalDetails : MedicalCondition?
     var pickUp_location : PickUpLocation?
     var drop_location : DropOffLocation?
 
@@ -28,6 +28,7 @@ class HistoryModel : NSObject {
         self.total_distance = data["total_distance"] as? String  ??  ""
         pickUp_location = PickUpLocation.init(model: data["pickUp_location"] as! [String: Any])
         drop_location = DropOffLocation.init(model: data["drop_location"] as! [String: Any])
+        user_medicalDetails = MedicalCondition.init(model: data["user_medicalDetails"] as! [String: Any])
         
 //        let arrCategory = data["subcategoryInfo"]  as? [[String:Any]]
 //        for category in arrCategory ?? [] {
@@ -59,6 +60,14 @@ class DropOffLocation: NSObject {
     init (model: [String:Any]){
         coordinates = model["coordinates"] as? [Double]
         type = model["type"] as? String ?? ""
+ 
+    }
+}
+class MedicalCondition : NSObject{
+    var medicalCondition: String?
+    
+    init (model: [String:Any]){
+        medicalCondition = model["medicalCondition"] as? String ?? ""
  
     }
 }

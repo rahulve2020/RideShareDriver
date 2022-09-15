@@ -48,6 +48,7 @@ class RideHistoryVC: SidePanelBaseViewController, FSCalendarDataSource, FSCalend
         tableView.dataSource = self
         
         historyList()
+        getTotalEarnDriver()
         
         if UIDevice.current.model.hasPrefix("iPhone") {
             self.calendarHeightConstraint.constant = 150
@@ -166,7 +167,7 @@ class RideHistoryVC: SidePanelBaseViewController, FSCalendarDataSource, FSCalend
 //                self.historyModel.append(modelObj)
 //            }
  //       }
-      //  self.loadData()
+        self.loadData()
             
     }, failure: {errorMsg in
         self.showOkAlert(errorMsg)
@@ -176,6 +177,7 @@ class RideHistoryVC: SidePanelBaseViewController, FSCalendarDataSource, FSCalend
     
     func loadData() {
         self.totalEarnLbl.text = self.historyModel.first?.total_Charge
+        self.totalJobLbl.text = "\(self.totalEarn.first?.totalJob)"
     }
     
 //    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -233,7 +235,9 @@ extension RideHistoryVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "HistoryDetailsVC") as! HistoryDetailsVC
+        vc.historyModel = historyModel
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
